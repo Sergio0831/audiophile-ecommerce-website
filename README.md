@@ -6,4 +6,4 @@ Frontend Mentor challenges help me improve my coding skills by building realisti
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./preview.jpg)
