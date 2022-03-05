@@ -1,0 +1,96 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.heading {
+  text-transform: uppercase;
+}
+
+.heading-1 {
+  @extend .heading;
+  letter-spacing: 2px;
+
+  @include font(
+    $font-size: $fs-mega,
+    $font-weight: $fw-bold,
+    $line-height: 5.8rem
+  );
+}
+
+.heading-2 {
+  @extend .heading;
+  letter-spacing: 1.43px;
+
+  @include font(
+    $font-size: $fs-kilo,
+    $font-weight: $fw-bold,
+    $line-height: 4.4rem
+  );
+}
+
+.heading-3 {
+  @extend .heading;
+  letter-spacing: 1.43px;
+
+  @include font(
+    $font-size: $fs-h1,
+    $font-weight: $fw-bold,
+    $line-height: 3.6rem
+  );
+}
+
+.heading-4 {
+  @extend .heading;
+  letter-spacing: 2px;
+
+  @include font(
+    $font-size: $fs-h2,
+    $font-weight: $fw-bold,
+    $line-height: 3.8rem
+  );
+}
+
+.heading-5 {
+  @extend .heading;
+  letter-spacing: 1.43px;
+
+  @include font(
+    $font-size: $fs-h3,
+    $font-weight: $fw-bold,
+    $line-height: 3.3rem
+  );
+}
+
+.heading-6 {
+  @extend .heading;
+  letter-spacing: 1.3px;
+
+  @include font(
+    $font-size: $fs-h4,
+    $font-weight: $fw-bold,
+    $line-height: 2.5rem
+  );
+}
+
+.overline {
+  @extend .heading;
+  letter-spacing: 1px;
+  color: $clr-primary;
+
+  @include font(
+    $font-size: $fs-micro,
+    $font-weight: $fw-bold,
+    $line-height: 1.9rem
+  );
+}
+
+.sub-title {
+  @extend .heading;
+  letter-spacing: 1px;
+  color: $clr-primary;
+
+  @include font(
+    $font-size: $fs-nano,
+    $font-weight: $fw-bold,
+    $line-height: 2.5rem
+  );
+}

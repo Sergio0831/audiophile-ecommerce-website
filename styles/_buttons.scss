@@ -1,0 +1,56 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.btn {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color $transition, background-color $transition;
+  border: none;
+
+  @include font(
+    $font-size: $fs-nano,
+    $font-weight: $fw-bold,
+    $line-height: 1.8rem
+  );
+}
+
+.btn-default-1 {
+  @extend .btn;
+
+  width: 16rem;
+  background-color: $clr-primary;
+  color: $clr-white;
+  padding: $padding-base * 1.5 0;
+
+  &:hover {
+    background-color: $clr-primary-light;
+  }
+}
+
+.btn-default-2 {
+  @extend .btn;
+
+  width: 16rem;
+  border: 1px solid $clr-black;
+  background-color: transparent;
+  color: $clr-black;
+  padding: $padding-base * 1.5 0;
+
+  &:hover {
+    color: $clr-white;
+    background-color: $clr-black;
+  }
+}
+
+.btn-default-2 {
+  @extend .btn;
+
+  border: none;
+  background-color: transparent;
+  color: rgba($clr-black, 0.5);
+
+  &:hover {
+    color: $clr-primary;
+  }
+}

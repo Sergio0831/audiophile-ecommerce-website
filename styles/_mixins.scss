@@ -1,0 +1,49 @@
+@use './variables' as *;
+
+/*** Typografy ***/
+@mixin font($font-weight: null, $font-size: null, $line-height: null) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+/*** Layout ***/
+@mixin flex(
+  $flex-direction: null,
+  $justify-content: null,
+  $align-items: null,
+  $flex-wrap: null
+) {
+  display: $d-flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-wrap: $flex-wrap;
+}
+
+/*** Width Height 100% ***/
+@mixin wh {
+  width: $width-base;
+  height: $height-base;
+}
+
+/*** Position ***/
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}

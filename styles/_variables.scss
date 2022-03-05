@@ -1,0 +1,61 @@
+/*** Colors ***/
+$clr-primary: #d87d4a;
+$clr-primary-light: #fbaf85;
+$clr-dark: #101010;
+$clr-black: #000;
+$clr-white: #fff;
+$clr-light: #f1f1f1;
+$clr-lighter: #fafafa;
+
+/*** Font ***/
+$font-base: 'Manrope', sans-serif;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-mega: 5.6rem;
+$fs-kilo: 4rem;
+
+$fs-h1: 3.2rem;
+$fs-h2: 2.8rem;
+$fs-h3: 2.4rem;
+$fs-h4: 1.8rem;
+
+$fs-base: 1.5rem;
+$fs-micro: 1.4rem;
+$fs-nano: 1.3rem;
+
+/*** Flex ***/
+$align-center: center;
+$align-start: flex-start;
+$align-end: flex-end;
+$justify-center: center;
+$justify-between: space-between;
+$justify-end: flex-end;
+$justify-start: flex-start;
+$wrap: wrap;
+
+/*** Display ***/
+$d-grid: grid;
+$d-flex: flex;
+$d-block: block;
+$d-inline-block: inline-block;
+$d-none: none;
+
+/*** Position ***/
+$p-relative: relative;
+$p-absolute: absolute;
+$p-fixed: fixed;
+
+/*** Space ***/
+$margin-base: 1rem;
+$padding-base: 1rem;
+$gap-base: 1rem;
+$width-base: 100%;
+$height-base: 100%;
+$radius-round: 50%;
+$ls-base: 2px;
+
+/*** Animation ***/
+$transition: 0.25s ease-out;

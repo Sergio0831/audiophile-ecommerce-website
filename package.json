@@ -10,6 +10,7 @@
     "generate": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' --transpile-only graphql/schema"
   },
   "dependencies": {
+    "@apollo/client": "^3.5.10",
     "apollo-server-micro": "^3.6.3",
     "graphql": "15.5.1",
     "micro": "^9.3.4",
