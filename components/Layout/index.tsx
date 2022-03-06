@@ -1,3 +1,5 @@
+import Header from './Header';
+
 type LayoutPops = {
   children: React.ReactNode;
 };
@@ -5,7 +7,7 @@ type LayoutPops = {
 const Layout = ({ children }: LayoutPops) => {
   return (
     <>
-      <header>Header</header>
+      <Header />
       <main>{children}</main>
       <footer>Footer</footer>
     </>

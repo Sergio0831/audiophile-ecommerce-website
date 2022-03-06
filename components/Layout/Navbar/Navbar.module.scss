@@ -1,0 +1,29 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.nav {
+  &__list {
+    display: $d-flex;
+    column-gap: $gap-base * 3.4;
+  }
+
+  .link {
+    text-transform: uppercase;
+    transition: color $transition;
+    letter-spacing: $ls-base * 2;
+
+    @include font(
+      $font-size: $fs-nano,
+      $line-height: 2.5rem,
+      $font-weight: $fw-bold
+    );
+
+    &__active {
+      color: $clr-primary;
+    }
+
+    &:hover {
+      color: $clr-primary;
+    }
+  }
+}
