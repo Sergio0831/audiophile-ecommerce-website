@@ -7,7 +7,7 @@
 
 .heading-1 {
   @extend .heading;
-  letter-spacing: $ls-base * 2;
+  letter-spacing: $ls-base * 1;
 
   @include font(
     $font-size: $fs-mega,
@@ -40,7 +40,7 @@
 
 .heading-4 {
   @extend .heading;
-  letter-spacing: $ls-base * 2;
+  letter-spacing: $ls-base * 1;
 
   @include font(
     $font-size: $fs-h2,
@@ -73,8 +73,7 @@
 
 .overline {
   @extend .heading;
-  letter-spacing: $ls-base;
-  color: $clr-primary;
+  letter-spacing: $ls-base * 5;
 
   @include font(
     $font-size: $fs-micro,
@@ -86,7 +85,6 @@
 .sub-title {
   @extend .heading;
   letter-spacing: $ls-base;
-  color: $clr-primary;
 
   @include font(
     $font-size: $fs-nano,

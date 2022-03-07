@@ -1,0 +1,32 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.hero {
+  height: 84vh;
+  background-image: url(../../../public/assets/home/desktop/image-hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: $p-relative;
+  border-radius: 5px;
+
+  @include flex($align-items: $align-center);
+
+  &__text {
+    width: 41rem;
+
+    span {
+      color: rgba($clr-white, 0.5);
+    }
+
+    h1 {
+      margin: $margin-base * 2.4 0;
+      color: $clr-white;
+    }
+
+    p {
+      margin-bottom: $margin-base * 4;
+      color: rgba($clr-white, 0.75);
+    }
+  }
+}

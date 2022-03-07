@@ -2,13 +2,19 @@
 @use '../../../styles/mixins' as *;
 
 .header {
-  background-color: $clr-black;
+  background-color: transparent;
   color: $clr-white;
   height: 9.6rem;
+  z-index: 5;
 
+  @include position($position: $p-absolute, $right: 0, $left: 0);
   @include flex($align-items: $align-center);
 
   &__container {
+    padding-top: $padding-base * 3.6;
+    padding-bottom: $padding-base * 3.6;
+    border-bottom: 1px solid rgba($clr-white, 0.2);
+
     @include flex($justify-content: $justify-between);
   }
 }

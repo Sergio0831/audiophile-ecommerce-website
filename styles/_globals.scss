@@ -15,7 +15,11 @@ body {
   font-family: $font-base;
   color: $clr-black;
 
-  @include font($font-size: $fs-base, $font-weight: $fw-medium);
+  @include font(
+    $font-size: $fs-base,
+    $font-weight: $fw-medium,
+    $line-height: 2.5rem
+  );
 }
 
 a {
@@ -37,6 +41,5 @@ ul {
 .section-center {
   width: $width-base;
   max-width: 110rem;
-  padding: 0 $padding-base * 2.4;
   margin: 0 auto;
 }

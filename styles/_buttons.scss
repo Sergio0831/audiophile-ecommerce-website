@@ -7,6 +7,7 @@
   letter-spacing: 1px;
   transition: color $transition, background-color $transition;
   border: none;
+  text-align: $align-center;
 
   @include font(
     $font-size: $fs-nano,
