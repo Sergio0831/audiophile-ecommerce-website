@@ -5,6 +5,7 @@ export const Category = objectType({
   name: 'Category',
   definition(t) {
     t.nonNull.string('category');
+    t.nonNull.string('image');
   }
 });
 

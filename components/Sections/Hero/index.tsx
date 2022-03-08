@@ -4,7 +4,7 @@ import classes from './Hero.module.scss';
 const Hero = () => {
   return (
     <section className={classes.hero}>
-      <div className='section-center'>
+      <div className={`${classes.hero__container} section-center`}>
         <div className={classes.hero__text}>
           <span className='overline'>new product</span>
           <h1 className='heading-1'>XX99 Mark II Headphones</h1>

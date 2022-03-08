@@ -2,8 +2,8 @@
 @use '../../../styles/mixins' as *;
 
 .hero {
-  height: 84vh;
-  background-image: url(../../../public/assets/home/desktop/image-hero.jpg);
+  height: 70vh;
+  background-image: url(../../../public//assets/home/mobile/image-hero-mobile.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -11,6 +11,30 @@
   border-radius: 5px;
 
   @include flex($align-items: $align-center);
+
+  @media only screen and (min-width: 90.06em) {
+    height: 100vh;
+  }
+
+  @media only screen and (min-width: 30em) {
+    height: 100vh;
+    background-image: url(../../../public//assets/home/tablet/image-hero-tablet.webp);
+  }
+
+  @media only screen and (min-width: 62.5em) {
+    height: 84vh;
+    background-image: url(../../../public//assets/home/desktop/image-hero.webp);
+  }
+
+  &__container {
+    @include flex($justify-content: $justify-center);
+    text-align: $align-center;
+
+    @media only screen and (min-width: 62.5em) {
+      @include flex($justify-content: $justify-start);
+      text-align: inherit;
+    }
+  }
 
   &__text {
     width: 41rem;

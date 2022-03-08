@@ -2,6 +2,8 @@
 @use '../../../styles/mixins' as *;
 
 .nav {
+  display: none;
+
   &__list {
     display: $d-flex;
     column-gap: $gap-base * 3.4;
@@ -25,5 +27,9 @@
     &:hover {
       color: $clr-primary;
     }
+  }
+
+  @media only screen and (min-width: 48em) {
+    display: inherit;
   }
 }

@@ -15,10 +15,17 @@
     padding-bottom: $padding-base * 3.6;
     border-bottom: 1px solid rgba($clr-white, 0.2);
 
-    @include flex($justify-content: $justify-between);
+    @include flex(
+      $justify-content: $justify-between,
+      $align-items: $align-center
+    );
   }
 }
 
 .logo {
   height: 2.5rem;
+}
+
+.cart {
+  @include flex($align-items: $align-center);
 }

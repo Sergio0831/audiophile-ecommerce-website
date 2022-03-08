@@ -11,7 +11,7 @@ const Header = () => {
           <Icon icon='logo' size='100%' />
         </Button>
         <Navbar />
-        <Button name='cart' link='/cart'>
+        <Button name='cart' link='/cart' className={classes.cart}>
           <Icon icon='cart' size='2rem' />
         </Button>
       </div>

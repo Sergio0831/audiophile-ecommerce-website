@@ -42,4 +42,11 @@ ul {
   width: $width-base;
   max-width: 110rem;
   margin: 0 auto;
+  padding-left: $padding-base * 2.4;
+  padding-right: $padding-base * 2.4;
+
+  @media only screen and (min-width: 68.75em) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
