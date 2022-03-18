@@ -1,10 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Categories from '../components/Sections/Categories';
 import Hero from '../components/Sections/Hero';
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Audiophile e-commerce website</title>
         <meta
@@ -14,8 +15,8 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Hero />
-      <h1>Audiophile e-commerce website</h1>
-    </div>
+      <Categories />
+    </>
   );
 };
 

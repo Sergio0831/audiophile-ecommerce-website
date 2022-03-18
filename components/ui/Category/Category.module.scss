@@ -1,0 +1,18 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.category {
+  height: 28rem;
+
+  img {
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: $clr-light;
+    height: 20rem;
+  }
+}

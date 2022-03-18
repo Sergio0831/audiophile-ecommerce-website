@@ -1,0 +1,60 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.menu {
+  display: none;
+
+  &__label {
+    display: $d-block;
+    width: 1.6rem;
+    height: 1.5rem;
+    cursor: pointer;
+
+    div {
+      position: $p-relative;
+      top: 0;
+      height: 3px;
+      background-color: $clr-white;
+      margin-bottom: 3px;
+      transition: $transition transform, $transition top, $transition width,
+        $transition right;
+
+      &:first-child {
+        transform-origin: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        transform-origin: 1.5rem;
+      }
+
+      &:nth-child(2) {
+        right: 0;
+      }
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &:checked + label div:first-child {
+    top: -1.5px;
+    right: 1px;
+    transform: rotateZ(45deg);
+  }
+
+  &:checked + label div:last-child {
+    top: 1.5px;
+    right: 1px;
+    transform: rotateZ(45deg);
+  }
+
+  &:checked + label div:nth-child(2) {
+    width: 2.1rem;
+    top: 1px;
+    right: 4px;
+    transform: rotateZ(-45deg);
+  }
+}

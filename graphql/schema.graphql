@@ -4,6 +4,7 @@
 
 type Category {
   category: String!
+  image: String!
 }
 
 type Gallery {

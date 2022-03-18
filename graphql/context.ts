@@ -1,12 +1,12 @@
 import { categories, products } from '../db/data';
-import { Categories } from '../types/caegory-type';
+import { CategoriesTypes } from '../types/category-type';
 import { Products } from '../types/product-types';
 
 export const productsDb: Products = {
   products
 };
 
-export const categoriesDb: Categories = {
+export const categoriesDb: CategoriesTypes = {
   categories
 };
 

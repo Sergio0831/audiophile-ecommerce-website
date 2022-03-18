@@ -1,8 +1,9 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
 
 .hero {
-  height: 70vh;
+  height: 72.5vh;
   background-image: url(../../../public//assets/home/mobile/image-hero-mobile.webp);
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,7 +17,7 @@
     height: 100vh;
   }
 
-  @media only screen and (min-width: 30em) {
+  @include mobile {
     height: 100vh;
     background-image: url(../../../public//assets/home/tablet/image-hero-tablet.webp);
   }
@@ -44,13 +45,21 @@
     }
 
     h1 {
-      margin: $margin-base * 2.4 0;
+      margin: $margin-base * 1.6 0 $margin-base * 2.4 0;
       color: $clr-white;
+
+      @include mobile {
+        margin: $margin-base * 2.4 0;
+      }
     }
 
     p {
-      margin-bottom: $margin-base * 4;
+      margin-bottom: $margin-base * 2.8;
       color: rgba($clr-white, 0.75);
+
+      @include mobile {
+        margin-bottom: $margin-base * 4;
+      }
     }
   }
 }

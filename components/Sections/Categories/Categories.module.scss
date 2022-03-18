@@ -1,0 +1,10 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.categories {
+  display: $d-grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  justify-items: $justify-center;
+  margin-top: $margin-base * 20;
+}

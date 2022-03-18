@@ -30,6 +30,7 @@ export interface NexusGenScalars {
 export interface NexusGenObjects {
   Category: { // root type
     category: string; // String!
+    image: string; // String!
   }
   Gallery: { // root type
     first?: NexusGenRootTypes['Image'] | null; // Image
@@ -81,6 +82,7 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 export interface NexusGenFieldTypes {
   Category: { // field return type
     category: string; // String!
+    image: string; // String!
   }
   Gallery: { // field return type
     first: NexusGenRootTypes['Image'] | null; // Image
@@ -127,6 +129,7 @@ export interface NexusGenFieldTypes {
 export interface NexusGenFieldTypeNames {
   Category: { // field return type name
     category: 'String'
+    image: 'String'
   }
   Gallery: { // field return type name
     first: 'Image'

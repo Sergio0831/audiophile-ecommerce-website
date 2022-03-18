@@ -1,5 +1,6 @@
 @use './variables' as *;
 @use './mixins' as *;
+@use './breakpoints' as *;
 
 .heading {
   text-transform: uppercase;
@@ -7,13 +8,19 @@
 
 .heading-1 {
   @extend .heading;
-  letter-spacing: $ls-base * 1;
+  letter-spacing: $ls-base * 1.3;
 
-  @include font(
-    $font-size: $fs-mega,
-    $font-weight: $fw-bold,
-    $line-height: 5.8rem
-  );
+  @include font($font-size: 3.6rem, $font-weight: $fw-bold, $line-height: 4rem);
+
+  @include mobile {
+    letter-spacing: $ls-base * 1;
+
+    @include font(
+      $font-size: $fs-mega,
+      $font-weight: $fw-bold,
+      $line-height: 5.8rem
+    );
+  }
 }
 
 .heading-2 {
