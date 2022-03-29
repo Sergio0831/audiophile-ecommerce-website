@@ -83,6 +83,7 @@ export interface NexusGenFieldTypes {
   Category: { // field return type
     category: string; // String!
     image: string; // String!
+    products: Array<NexusGenRootTypes['Product'] | null>; // [Product]!
   }
   Gallery: { // field return type
     first: NexusGenRootTypes['Image'] | null; // Image
@@ -120,8 +121,8 @@ export interface NexusGenFieldTypes {
   }
   Query: { // field return type
     categories: Array<NexusGenRootTypes['Category'] | null>; // [Category]!
-    category: Array<NexusGenRootTypes['Product'] | null>; // [Product]!
-    product: Array<NexusGenRootTypes['Product'] | null>; // [Product]!
+    category: NexusGenRootTypes['Category']; // Category!
+    product: NexusGenRootTypes['Product']; // Product!
     products: Array<NexusGenRootTypes['Product'] | null>; // [Product]!
   }
 }
@@ -130,6 +131,7 @@ export interface NexusGenFieldTypeNames {
   Category: { // field return type name
     category: 'String'
     image: 'String'
+    products: 'Product'
   }
   Gallery: { // field return type name
     first: 'Image'
@@ -167,7 +169,7 @@ export interface NexusGenFieldTypeNames {
   }
   Query: { // field return type name
     categories: 'Category'
-    category: 'Product'
+    category: 'Category'
     product: 'Product'
     products: 'Product'
   }

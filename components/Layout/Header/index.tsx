@@ -1,5 +1,6 @@
 import Button from '../../ui/Button';
 import Icon from '../../ui/Icon';
+import Logo from '../../ui/Logo';
 import MenuBtn from '../../ui/MenuBtn';
 import Navbar from '../Navbar';
 import classes from './Header.module.scss';
@@ -9,9 +10,7 @@ const Header = () => {
     <header className={classes.header}>
       <div className={`section-center ${classes.header__container}`}>
         <MenuBtn />
-        <Button name='logo' link='/' className={classes.logo} aria-label='Logo'>
-          <Icon icon='logo' size='100%' />
-        </Button>
+        <Logo />
         <Navbar />
         <Button
           name='cart'

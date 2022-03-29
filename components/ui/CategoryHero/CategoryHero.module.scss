@@ -1,0 +1,17 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.hero {
+  position: $p-relative;
+  height: 33rem;
+  color: $clr-white;
+  background-color: $clr-black;
+
+  h1 {
+    position: absolute;
+    left: 50%;
+    top: 59%;
+    transform: translateX(-50%);
+  }
+}

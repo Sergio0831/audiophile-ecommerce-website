@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import Header from './Header';
 
 type LayoutPops = {
@@ -8,8 +9,8 @@ const Layout = ({ children }: LayoutPops) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
-      <footer>Footer</footer>
+      <main>{children}Main Section</main>
+      <Footer />
     </>
   );
 };

@@ -70,13 +70,13 @@ export const ProductsQuery = extendType({
 export const ProductQuery = extendType({
   type: 'Query',
   definition(t) {
-    t.nonNull.list.field('product', {
-      type: 'Product',
+    t.nonNull.field('product', {
+      type: Product,
       args: {
         slug: nonNull(stringArg())
       },
       resolve(parent, { slug }, ctx) {
-        return ctx.productsDb.products.filter(
+        return ctx.productsDb.products.find(
           (product: ProductType) => product.slug === slug
         );
       }

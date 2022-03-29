@@ -5,6 +5,19 @@
 .categories {
   display: $d-grid;
   grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  column-gap: $gap-base * 3;
+  row-gap: $gap-base * 1.6;
   justify-items: $justify-center;
-  margin-top: $margin-base * 20;
+  padding-top: $padding-base * 4;
+  padding-bottom: $padding-base * 12;
+
+  @include mobile {
+    padding-top: $padding-base * 5;
+    padding-bottom: $padding-base * 9.6;
+  }
+
+  @include tablet {
+    padding-top: $padding-base * 5;
+    padding-bottom: $padding-base * 16;
+  }
 }

@@ -22,10 +22,6 @@
   }
 }
 
-.logo {
-  height: 2.5rem;
-}
-
 .cart {
   @include flex($align-items: $align-center);
 }

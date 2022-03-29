@@ -13,10 +13,6 @@
 
   @include flex($align-items: $align-center);
 
-  @media only screen and (min-width: 90.06em) {
-    height: 100vh;
-  }
-
   @include mobile {
     height: 100vh;
     background-image: url(../../../public//assets/home/tablet/image-hero-tablet.webp);
@@ -25,6 +21,10 @@
   @media only screen and (min-width: 62.5em) {
     height: 84vh;
     background-image: url(../../../public//assets/home/desktop/image-hero.webp);
+  }
+
+  @media only screen and (min-width: 90.06em) {
+    height: 100vh;
   }
 
   &__container {

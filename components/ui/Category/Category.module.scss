@@ -3,16 +3,59 @@
 @use '../../../styles/breakpoints' as *;
 
 .category {
+  width: $width-base;
   height: 28rem;
+  text-align: $align-center;
 
-  img {
+  &__image {
+    transform: translateY(50%);
+    transition: transform $transition;
+
+    @include flex($flex-direction: column, $align-items: $align-center);
+
+    &::after {
+      content: '';
+      width: 12rem;
+      height: 1.8rem;
+      background: $clr-black;
+      filter: blur(3.5rem);
+      transition: transform $transition;
+    }
+
+    img {
+      object-fit: contain;
+    }
   }
 
   &__text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    @include flex($flex-direction: column, $justify-content: $justify-end);
+
     background-color: $clr-light;
     height: 20rem;
+    padding-bottom: $padding-base * 3;
+
+    h6 {
+      margin-bottom: $margin-base * 1.5;
+    }
+
+    span {
+      align-self: $align-center;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      span {
+        color: $clr-primary;
+      }
+
+      .category__image {
+        transform: translateY(40%);
+
+        &::after {
+          transform: translateY(80%);
+        }
+      }
+    }
   }
 }

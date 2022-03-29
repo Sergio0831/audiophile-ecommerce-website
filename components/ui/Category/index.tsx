@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { CategoryTypes } from '../../../types/category-type';
 import Button from '../Button';
 import classes from './Category.module.scss';
@@ -9,15 +10,20 @@ type CategoryProps = {
 
 const Category = ({ category }: CategoryProps) => {
   return (
-    <div className={classes.category}>
-      <Image src={category.image} alt={category.category} />
+    <Button link={`/${category.category}`} className={classes.category}>
+      <div className={classes.category__image}>
+        <Image
+          src={category.image}
+          alt={category.category}
+          width={120}
+          height={150}
+        />
+      </div>
       <div className={classes.category__text}>
         <h6 className='heading-6'>{category.category}</h6>
-        <Button className='btn-default-3' link=''>
-          Shop
-        </Button>
+        <span className='btn-default-3'>Shop</span>
       </div>
-    </div>
+    </Button>
   );
 };
 
