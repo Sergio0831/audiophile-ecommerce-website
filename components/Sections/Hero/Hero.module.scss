@@ -18,12 +18,12 @@
     background-image: url(../../../public//assets/home/tablet/image-hero-tablet.webp);
   }
 
-  @media only screen and (min-width: 62.5em) {
+  @include laptop {
     height: 84vh;
     background-image: url(../../../public//assets/home/desktop/image-hero.webp);
   }
 
-  @media only screen and (min-width: 90.06em) {
+  @include desktop {
     height: 100vh;
   }
 
@@ -31,7 +31,7 @@
     @include flex($justify-content: $justify-center);
     text-align: $align-center;
 
-    @media only screen and (min-width: 62.5em) {
+    @include laptop {
       @include flex($justify-content: $justify-start);
       text-align: inherit;
     }

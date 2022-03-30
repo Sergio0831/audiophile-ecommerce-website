@@ -1,25 +1,25 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { navLinks } from '../../../db/navLinks';
 import classes from './Navbar.module.scss';
 
-const navLinks = [
-  { title: 'Home', path: '/' },
-  { title: 'Headphones', path: '/headphones' },
-  { title: 'Speakers', path: '/speakers' },
-  { title: 'Earphones', path: '/earphones' }
-];
+type NavBarProps = {
+  className?: string;
+};
 
-const Navbar = () => {
+const Navbar = ({ className }: NavBarProps) => {
   const router = useRouter();
 
-  // const linkClasses = clsx({
-  //   [classes.link]: true,
-  //   [classes.link__active]: router.pathname === link.path
-  // });
+  const navClasses = clsx(
+    {
+      [classes.nav]: true
+    },
+    className
+  );
 
   return (
-    <nav className={classes.nav}>
+    <nav className={navClasses}>
       <ul className={classes.nav__list}>
         {navLinks.map((link) => (
           <li key={link.title}>

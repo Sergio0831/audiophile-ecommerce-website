@@ -1,32 +1,33 @@
+import clsx from 'clsx';
+import { socials } from '../../../db/socials';
 import Icon from '../Icon';
 import classes from './Socials.module.scss';
 
-const Socials = () => {
+type SocialsProps = {
+  className?: string;
+};
+
+const Socials = ({ className }: SocialsProps) => {
+  const socialsClasses = clsx(
+    {
+      [classes.socials]: true
+    },
+    className
+  );
+
   return (
-    <ul className={classes.socials}>
-      <li>
-        <a
-          href='https://facebook.com'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          <Icon icon='facebook' size={24} />
-        </a>
-      </li>
-      <li>
-        <a href='https://twitter.com' rel='noopener noreferrer' target='_blank'>
-          <Icon icon='twitter' size={24} />
-        </a>
-      </li>
-      <li>
-        <a
-          href='https://instagramm.com'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          <Icon icon='instagram' size={24} />
-        </a>
-      </li>
+    <ul className={socialsClasses}>
+      {socials.map((social) => (
+        <li>
+          <a
+            href={`https://${social.icon}.com`}
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            <Icon icon={social.icon} size={social.size} color={social.color} />
+          </a>
+        </li>
+      ))}
     </ul>
   );
 };
