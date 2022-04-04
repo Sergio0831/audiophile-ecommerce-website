@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutPops) => {
   return (
     <>
       <Header />
-      <main>{children}Main Section</main>
+      <main>{children}</main>
       <Footer />
     </>
   );

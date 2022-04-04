@@ -21,10 +21,6 @@
       filter: blur(3.5rem);
       transition: transform $transition;
     }
-
-    img {
-      object-fit: contain;
-    }
   }
 
   &__text {

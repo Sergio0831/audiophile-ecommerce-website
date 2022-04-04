@@ -17,6 +17,7 @@ const Category = ({ category }: CategoryProps) => {
           alt={category.category}
           width={120}
           height={150}
+          objectFit='contain'
         />
       </div>
       <div className={classes.category__text}>

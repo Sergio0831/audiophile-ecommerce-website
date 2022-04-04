@@ -18,7 +18,7 @@ const Socials = ({ className }: SocialsProps) => {
   return (
     <ul className={socialsClasses}>
       {socials.map((social) => (
-        <li>
+        <li key={social.icon}>
           <a
             href={`https://${social.icon}.com`}
             rel='noopener noreferrer'

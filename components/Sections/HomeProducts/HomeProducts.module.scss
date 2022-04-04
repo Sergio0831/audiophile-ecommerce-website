@@ -1,0 +1,79 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.products {
+  display: $d-grid;
+  row-gap: $gap-base * 3.2;
+  grid-template-rows: 56rem repeat(2, 32rem);
+  padding-bottom: $padding-base * 20;
+
+  .zx9 {
+    @include flex($justify-content: $justify-end, $align-items: $align-center);
+
+    background-color: $clr-primary;
+    background-image: url('../../../public/assets/home/desktop/pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 8px;
+    padding-right: $padding-base * 12.5;
+
+    &__image {
+      max-width: 40rem;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &__text {
+      width: $width-base;
+      max-width: 32rem;
+
+      p {
+        margin: $margin-base * 2.4 0 $margin-base * 4;
+        color: $clr-white;
+      }
+    }
+  }
+
+  .zx7 {
+    @include flex($align-items: $align-center);
+
+    background-image: url('../../../public/assets/home/desktop/image-speaker-zx7.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    padding-left: $padding-base * 9.5;
+
+    h4 {
+      margin-bottom: $margin-base * 3.2;
+    }
+  }
+
+  .yx1 {
+    display: $d-grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $gap-base * 3;
+
+    &__image {
+      background-image: url('../../../public/assets/home/desktop/image-earphones-yx1.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+    }
+
+    &__text {
+      @include flex($align-items: $align-center);
+
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      padding-left: $padding-base * 9.5;
+
+      h4 {
+        margin-bottom: $margin-base * 3.2;
+      }
+    }
+  }
+}
