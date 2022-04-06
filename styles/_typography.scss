@@ -25,13 +25,23 @@
 
 .heading-2 {
   @extend .heading;
-  letter-spacing: $ls-base * 0.43;
+  letter-spacing: $ls-base;
 
   @include font(
-    $font-size: $fs-kilo,
+    $font-size: $fs-h2,
     $font-weight: $fw-bold,
-    $line-height: 4.4rem
+    $line-height: 3.8rem
   );
+
+  @include mobile {
+    letter-spacing: $ls-base * 0.43;
+
+    @include font(
+      $font-size: $fs-kilo,
+      $font-weight: $fw-bold,
+      $line-height: 4.4rem
+    );
+  }
 }
 
 .heading-3 {

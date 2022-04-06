@@ -6,30 +6,39 @@
   display: $d-grid;
   row-gap: $gap-base * 3.2;
   grid-template-rows: 56rem repeat(2, 32rem);
-  padding-bottom: $padding-base * 20;
 
   .zx9 {
-    @include flex($justify-content: $justify-end, $align-items: $align-center);
-
+    display: $d-grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
     background-color: $clr-primary;
     background-image: url('../../../public/assets/home/desktop/pattern-circles.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 80%;
+    background-position: -8rem -3rem;
     border-radius: 8px;
-    padding-right: $padding-base * 12.5;
 
     &__image {
-      max-width: 40rem;
+      max-width: 38rem;
+      align-self: $align-end;
+      justify-self: $justify-end;
 
       img {
-        width: 100%;
-        object-fit: contain;
+        display: $d-block;
+        width: $width-base;
+        transform: translateY(0.7rem);
       }
     }
 
     &__text {
+      align-self: $align-center;
+      justify-self: $justify-center;
       width: $width-base;
       max-width: 32rem;
+
+      h1 {
+        color: $clr-white;
+      }
 
       p {
         margin: $margin-base * 2.4 0 $margin-base * 4;

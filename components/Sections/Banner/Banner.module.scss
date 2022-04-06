@@ -1,0 +1,63 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.banner {
+  display: $d-grid;
+  grid-template-columns: 1fr;
+  row-gap: $gap-base * 4;
+  padding-top: $padding-base * 12;
+  padding-bottom: $padding-base * 12;
+
+  @include mobile {
+    row-gap: $gap-base * 6.3;
+    padding-top: $padding-base * 9.6;
+    padding-bottom: $padding-base * 9.6;
+  }
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: $padding-base * 20;
+    padding-bottom: $padding-base * 20;
+  }
+
+  &__text {
+    grid-row: 2;
+    width: 100%;
+    max-width: 57rem;
+    text-align: $align-center;
+    align-self: $align-center;
+    justify-self: $justify-center;
+
+    h2 {
+      margin-bottom: $margin-base * 3.2;
+    }
+
+    span {
+      color: $clr-primary;
+    }
+
+    p {
+      opacity: 0.5;
+    }
+
+    @include laptop {
+      grid-row: 1;
+      max-width: 44.5rem;
+      text-align: inherit;
+    }
+  }
+
+  &__image {
+    grid-row: 1;
+    position: $p-relative;
+    height: 30rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    @include laptop {
+      grid-row: 1;
+      height: 58rem;
+    }
+  }
+}
