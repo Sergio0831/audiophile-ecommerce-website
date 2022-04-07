@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '../../ui/Image';
 import classes from './Banner.module.scss';
 
 const Banner = () => {
@@ -19,9 +19,11 @@ const Banner = () => {
       </div>
       <div className={classes.banner__image}>
         <Image
-          src='/assets/shared/mobile/image-best-gear.webp'
-          alt='banner'
-          layout='fill'
+          desktopWebp='/assets/shared/desktop/image-best-gear.webp'
+          tabletWebp='/assets/shared/tablet/image-best-gear.webp'
+          mobileWebp='/assets/shared/mobile/image-best-gear.webp'
+          imageClasses=''
+          alt='Banner'
         />
       </div>
     </section>

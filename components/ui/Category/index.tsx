@@ -1,7 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { CategoryTypes } from '../../../types/category-type';
 import Button from '../Button';
+import Image from '../Image';
 import classes from './Category.module.scss';
 
 type CategoryProps = {
@@ -13,11 +12,11 @@ const Category = ({ category }: CategoryProps) => {
     <Button link={`/${category.category}`} className={classes.category}>
       <div className={classes.category__image}>
         <Image
-          src={category.image}
+          desktopWebp={`/assets/shared/desktop/${category.category}.webp`}
+          tabletWebp={`/assets/shared/tablet/${category.category}.webp`}
+          mobileWebp={`/assets/shared/mobile/${category.category}.webp`}
+          imageClasses=''
           alt={category.category}
-          width={120}
-          height={150}
-          objectFit='contain'
         />
       </div>
       <div className={classes.category__text}>

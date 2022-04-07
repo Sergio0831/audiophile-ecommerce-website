@@ -1,0 +1,20 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.products {
+  display: $d-grid;
+  row-gap: $gap-base * 12;
+  padding-top: $padding-base * 6.4;
+  padding-bottom: $padding-base * 12;
+
+  @include mobile {
+    padding-top: $padding-base * 12;
+  }
+
+  @include laptop {
+    row-gap: $gap-base * 16;
+    padding-top: $padding-base * 16;
+    padding-bottom: $padding-base * 16;
+  }
+}

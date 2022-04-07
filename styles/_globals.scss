@@ -38,6 +38,10 @@ ul {
   list-style: none;
 }
 
+span {
+  display: $d-block;
+}
+
 .section-center {
   width: $width-base;
   max-width: 110rem;

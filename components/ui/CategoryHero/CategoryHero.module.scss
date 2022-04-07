@@ -4,9 +4,13 @@
 
 .hero {
   position: $p-relative;
-  height: 33rem;
+  height: 19rem;
   color: $clr-white;
   background-color: $clr-black;
+
+  @include mobile {
+    height: 33rem;
+  }
 
   h1 {
     position: absolute;
