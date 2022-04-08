@@ -27,6 +27,10 @@
     padding: 0;
 
     @include mobile {
+      padding: 0 $padding-base * 8;
+    }
+
+    @include tablet {
       padding: 0 $padding-base * 11;
     }
 

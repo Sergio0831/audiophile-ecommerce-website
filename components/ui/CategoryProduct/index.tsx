@@ -9,7 +9,6 @@ type CategoryProductProps = {
 };
 
 const CategoryProduct = ({ product }: CategoryProductProps) => {
-  console.log(product);
   const {
     name,
     new: newProduct,
@@ -26,6 +25,7 @@ const CategoryProduct = ({ product }: CategoryProductProps) => {
           desktopWebp={categoryImage.desktop}
           tabletWebp={categoryImage.tablet}
           mobileWebp={categoryImage.mobile}
+          tabletWidth='1000px'
           alt={name}
         />
       </div>

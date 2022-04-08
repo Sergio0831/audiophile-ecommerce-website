@@ -5,6 +5,7 @@ type ImageProps = {
   mobileWebp: string;
   imageClasses?: string;
   desktopWebp: string;
+  tabletWidth?: string;
   alt: string;
 };
 
@@ -13,18 +14,15 @@ const Image = ({
   mobileWebp,
   imageClasses,
   desktopWebp,
+  tabletWidth,
   alt
 }: ImageProps) => {
   return (
     <picture>
-      <source
-        media='(max-width: 559px)'
-        srcSet={`${mobileWebp}`}
-        type='image/webp'
-      />
+      <source media='559' srcSet={`${mobileWebp}`} type='image/webp' />
       {tabletWebp && (
         <source
-          media='(max-width: 768px)'
+          media={`(max-width: ${tabletWidth ? tabletWidth : '768px'})`}
           srcSet={`${tabletWebp}`}
           type='image/webp'
         />

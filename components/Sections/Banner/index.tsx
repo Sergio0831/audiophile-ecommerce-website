@@ -1,9 +1,18 @@
+import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import Image from '../../ui/Image';
 import classes from './Banner.module.scss';
 
 const Banner = () => {
+  const router = useRouter();
+
+  const bannerClasses = clsx({
+    [classes.banner]: true,
+    [classes.banner__home]: router.pathname === '/'
+  });
+
   return (
-    <section className={`${classes.banner} section-center `}>
+    <section className={`${bannerClasses} section-center `}>
       <div className={classes.banner__text}>
         <h2 className='heading-2'>
           bringing you the <span>best</span> audio gear
@@ -22,7 +31,7 @@ const Banner = () => {
           desktopWebp='/assets/shared/desktop/image-best-gear.webp'
           tabletWebp='/assets/shared/tablet/image-best-gear.webp'
           mobileWebp='/assets/shared/mobile/image-best-gear.webp'
-          imageClasses=''
+          tabletWidth='1000px'
           alt='Banner'
         />
       </div>
