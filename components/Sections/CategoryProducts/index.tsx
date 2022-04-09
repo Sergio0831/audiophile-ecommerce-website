@@ -9,9 +9,11 @@ type CategoryProductsProps = {
 const CategoryProducts = ({ products }: CategoryProductsProps) => {
   return (
     <section className={`${classes.products} section-center`}>
-      {products.map((product) => (
-        <CategoryProduct key={product.id} product={product} />
-      ))}
+      {products
+        .map((product) => (
+          <CategoryProduct key={product.id} product={product} />
+        ))
+        .sort((a: any) => (a.new ? 1 : -1))}
     </section>
   );
 };

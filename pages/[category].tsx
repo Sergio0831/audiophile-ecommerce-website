@@ -33,7 +33,6 @@ export const getStaticProps: GetStaticProps = async ({
     query: GET_CATEGORY,
     variables: { categoryName: category }
   });
-  console.log(data.category.products);
 
   return {
     props: {
