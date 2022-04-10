@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Button from '../../ui/Button';
 import classes from './HomeProducts.module.scss';
 
@@ -36,7 +35,7 @@ const HomeProducts = () => {
         <div className={classes.yx1__text}>
           <div>
             <h4 className='heading-4'>yx1 earphones</h4>
-            <Button className='btn-default-2' link='/speakers/yx1-earphones'>
+            <Button className='btn-default-2' link='/earphones/yx1-earphones'>
               see product
             </Button>
           </div>

@@ -1,0 +1,65 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.product {
+  display: $d-grid;
+  grid-template-columns: 1fr;
+  padding-top: $padding-base * 8.2;
+  position: $p-relative;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: $padding-base * 16;
+  }
+
+  &__backLink {
+    text-transform: capitalize;
+    opacity: 0.5;
+
+    @include position($position: $p-absolute, $top: 3rem, $left: 2.4rem);
+
+    @include large-laptop {
+      left: auto;
+    }
+  }
+
+  &__image {
+    img {
+      width: $width-base;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    width: $width-base;
+    max-width: 34rem;
+    align-self: $align-center;
+    justify-self: $justify-end;
+
+    @include laptop {
+      max-width: 44.5rem;
+    }
+
+    span {
+      color: $clr-primary;
+      margin-bottom: $margin-base * 1.6;
+    }
+
+    p {
+      margin: $margin-base * 3.2 0;
+      opacity: 0.5;
+    }
+  }
+
+  &__toCart {
+    margin-top: $margin-base * 3;
+
+    @include flex();
+    column-gap: $gap-base * 1.6;
+
+    @include tablet {
+      margin-top: $margin-base * 4.7;
+    }
+  }
+}

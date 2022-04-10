@@ -1,6 +1,8 @@
 $breakpoints: (
   'desktop': 90.06em,
   // 1440.96px
+  'large-laptop': 68.75em,
+  // 1100px
   'laptop': 62.5em,
   // 1000px
   'tablet': 48em,
@@ -22,6 +24,12 @@ $breakpoints: (
 
 @mixin laptop {
   @media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+    @content;
+  }
+}
+
+@mixin large-laptop {
+  @media only screen and (min-width: map-get($breakpoints, 'large-laptop')) {
     @content;
   }
 }

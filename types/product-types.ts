@@ -1,12 +1,12 @@
 export type Includes = {
-  quantity: Number;
-  item: String;
+  quantity: number;
+  item: string;
 };
 
 export type Image = {
-  mobile: String;
-  tablet: String;
-  desktop: String;
+  mobile: string;
+  tablet: string;
+  desktop: string;
 };
 
 export type Gallery = {
@@ -16,22 +16,22 @@ export type Gallery = {
 };
 
 export type Others = {
-  slug: String;
-  name: String;
+  slug: string;
+  name: string;
   image: Image;
 };
 
 export type ProductType = {
-  id: Number;
-  slug: String;
-  name: String;
+  id: number;
+  slug: string;
+  name: string;
   image: Image;
-  category: String;
+  category: string;
   categoryImage: Image;
-  new: Boolean;
-  price: Number;
-  description: String;
-  features: String;
+  new: boolean;
+  price: number;
+  description: string;
+  features: string;
   includes: Includes[];
   gallery: Gallery;
   others: Others[];

@@ -1,5 +1,6 @@
 @use './variables' as *;
 @use './mixins' as *;
+@use './breakpoints' as *;
 
 * {
   box-sizing: border-box;
@@ -49,7 +50,7 @@ span {
   padding-left: $padding-base * 2.4;
   padding-right: $padding-base * 2.4;
 
-  @media only screen and (min-width: 68.75em) {
+  @include large-laptop {
     padding-left: 0;
     padding-right: 0;
   }

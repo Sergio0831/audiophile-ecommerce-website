@@ -2,26 +2,25 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { apolloClient } from '../../client';
 import Banner from '../../components/Sections/Banner';
 import Categories from '../../components/Sections/Categories';
+import ProductDetails from '../../components/Sections/ProductDetails';
 import { GET_PRODUCT, GET_PRODUCTS } from '../../graphql/queries';
 import { ProductType } from '../../types/product-types';
 
-type ProductDetailsProps = {
+type ProductDetailsPageProps = {
   product: ProductType;
 };
 
-const ProductDetails = ({ product }: ProductDetailsProps) => {
-  console.log(product);
-
+const ProductDetailsPage = ({ product }: ProductDetailsPageProps) => {
   return (
     <>
-      <section>{product.name}</section>
+      <ProductDetails product={product} />
       <Categories />
       <Banner />
     </>
   );
 };
 
-export default ProductDetails;
+export default ProductDetailsPage;
 
 export const getStaticProps: GetStaticProps = async ({
   params: { slug }
