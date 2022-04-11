@@ -46,13 +46,19 @@
 
 .heading-3 {
   @extend .heading;
-  letter-spacing: $ls-base * 1.43;
+  letter-spacing: 0.86;
 
   @include font(
-    $font-size: $fs-h1,
+    $font-size: $fs-h3,
     $font-weight: $fw-bold,
     $line-height: 3.6rem
   );
+
+  @include mobile {
+    letter-spacing: $ls-base * 0.43;
+
+    @include font($font-size: $fs-h1);
+  }
 }
 
 .heading-4 {

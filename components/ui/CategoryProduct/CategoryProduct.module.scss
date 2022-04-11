@@ -11,14 +11,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  &__image {
-    img {
-      width: $width-base;
-      object-fit: cover;
-      border-radius: 1rem;
-    }
-  }
-
   &__text {
     align-self: $align-center;
     justify-self: $justify-center;

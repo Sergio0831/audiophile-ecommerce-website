@@ -35,6 +35,12 @@ a {
 //   object-fit: cover;
 // }
 
+.img {
+  border-radius: 8px;
+  width: $width-base;
+  object-fit: cover;
+}
+
 ul {
   list-style: none;
 }

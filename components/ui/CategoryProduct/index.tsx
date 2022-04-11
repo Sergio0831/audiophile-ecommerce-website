@@ -27,6 +27,7 @@ const CategoryProduct = ({ product }: CategoryProductProps) => {
           mobileWebp={categoryImage.mobile}
           tabletWidth='1000px'
           alt={name}
+          imageClasses='img'
         />
       </div>
       <div className={classes.product__text}>

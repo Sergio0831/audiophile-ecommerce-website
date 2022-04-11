@@ -5,50 +5,64 @@
 .product {
   display: $d-grid;
   grid-template-columns: 1fr;
-  padding-top: $padding-base * 8.2;
+  padding-top: $padding-base * 6.5;
+  padding-bottom: $padding-base * 6.5;
   position: $p-relative;
+  row-gap: $gap-base * 4;
 
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
+    padding-top: $padding-base * 8.2;
+    padding-bottom: $padding-base * 8.2;
+  }
+
+  @include laptop {
     padding-top: $padding-base * 16;
+    padding-bottom: $padding-base * 16;
   }
 
   &__backLink {
     text-transform: capitalize;
     opacity: 0.5;
 
-    @include position($position: $p-absolute, $top: 3rem, $left: 2.4rem);
+    @include position($position: $p-absolute, $top: 1.6rem, $left: 2.4rem);
+
+    @include tablet {
+      top: 3rem;
+    }
 
     @include large-laptop {
       left: auto;
     }
   }
 
-  &__image {
-    img {
-      width: $width-base;
-      object-fit: cover;
-    }
+  &__new {
+    color: $clr-primary;
+    margin-bottom: $margin-base * 1.6;
   }
 
   &__content {
     width: $width-base;
-    max-width: 34rem;
+
     align-self: $align-center;
-    justify-self: $justify-end;
+    justify-self: $justify-start;
+
+    @include tablet {
+      max-width: 34rem;
+      justify-self: $justify-end;
+    }
 
     @include laptop {
       max-width: 44.5rem;
     }
 
-    span {
-      color: $clr-primary;
-      margin-bottom: $margin-base * 1.6;
-    }
-
     p {
-      margin: $margin-base * 3.2 0;
+      margin: $margin-base * 2.5 0;
       opacity: 0.5;
+
+      @include tablet {
+        margin: $margin-base * 3.2 0;
+      }
     }
   }
 

@@ -1,3 +1,31 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 @use '../../../styles/breakpoints' as *;
+
+.addToCart {
+  @include flex(
+    $align-items: $align-center,
+    $justify-content: $justify-between
+  );
+
+  width: 12rem;
+  padding: $padding-base * 1.5;
+  background-color: $clr-light;
+
+  button {
+    background-color: transparent;
+    color: rgba($clr-black, 0.25);
+    width: 1.6rem;
+    height: $height-base;
+    font-size: $fs-micro;
+
+    &:hover {
+      color: $clr-primary;
+    }
+  }
+
+  span {
+    font-size: $fs-nano;
+    font-weight: $fw-bold;
+  }
+}

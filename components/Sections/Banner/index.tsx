@@ -33,6 +33,7 @@ const Banner = () => {
           mobileWebp='/assets/shared/mobile/image-best-gear.webp'
           tabletWidth='1000px'
           alt='Banner'
+          imageClasses='img'
         />
       </div>
     </section>

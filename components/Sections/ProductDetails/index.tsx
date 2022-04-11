@@ -29,14 +29,20 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
           tabletWebp={tablet}
           mobileWebp={mobile}
           alt={name}
+          mobileWidth='48em'
           tabletWidth='62.5em'
+          imageClasses='img'
         />
       </div>
       <div className={classes.product__content}>
-        {newProduct ? <span className='overline'>new product</span> : null}
+        {newProduct ? (
+          <span className={`overline ${classes.product__new}`}>
+            new product
+          </span>
+        ) : null}
         <h2 className='heading-2'>{name}</h2>
         <p>{description}</p>
-        <h6 className='heading-6'>${price}</h6>
+        <h6 className='heading-6'>$ {Intl.NumberFormat().format(price)}</h6>
         <div className={classes.product__toCart}>
           <AddToCart />
           <Button className='btn-default-1'>add to cart</Button>

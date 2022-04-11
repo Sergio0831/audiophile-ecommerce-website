@@ -1,4 +1,5 @@
 import Button from '../../ui/Button';
+import Image from '../../ui/Image';
 import classes from './HomeProducts.module.scss';
 
 const HomeProducts = () => {
@@ -6,8 +7,10 @@ const HomeProducts = () => {
     <section className={`${classes.products} section-center`}>
       <div className={classes.zx9}>
         <div className={classes.zx9__image}>
-          <img
-            src='/assets/home/desktop/image-speaker-zx9.webp'
+          <Image
+            desktopWebp='/assets/home/desktop/image-speaker-zx9.webp'
+            tabletWebp='/assets/home/tablet/image-speaker-zx9.webp'
+            mobileWebp='/assets/home/mobile/image-speaker-zx9.webp'
             alt='ZX9-SPEAKER'
           />
         </div>

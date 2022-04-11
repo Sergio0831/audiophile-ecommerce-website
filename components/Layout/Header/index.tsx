@@ -27,7 +27,7 @@ const Header = () => {
           className={classes.cart}
           aria-label='Cart'
         >
-          <Icon icon='cart' size='2rem' />
+          <Icon icon='cart' size='2.3rem' />
         </Button>
       </div>
     </header>
