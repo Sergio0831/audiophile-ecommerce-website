@@ -18,6 +18,8 @@ const Navbar = ({ className }: NavBarProps) => {
     className
   );
 
+  console.log(router.pathname);
+
   return (
     <nav className={navClasses}>
       <ul className={classes.nav__list}>
@@ -26,7 +28,7 @@ const Navbar = ({ className }: NavBarProps) => {
             <Link href={link.path} passHref>
               <a
                 className={
-                  router.pathname === link.path
+                  router.asPath === link.path
                     ? `${classes.link__active} ${classes.link}`
                     : `${classes.link}`
                 }

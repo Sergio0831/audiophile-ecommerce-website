@@ -4,6 +4,8 @@ import Banner from '../../components/Sections/Banner';
 import Categories from '../../components/Sections/Categories';
 import ProductDetails from '../../components/Sections/ProductDetails';
 import ProductDetailsFeatures from '../../components/Sections/ProductDetailsFeatures';
+import ProductDetailsGallery from '../../components/Sections/ProductDetailsGallery';
+import ProductDetailsOthers from '../../components/Sections/ProductDetailsOthers';
 import { GET_PRODUCT, GET_PRODUCTS } from '../../graphql/queries';
 import { ProductType } from '../../types/product-types';
 
@@ -12,12 +14,14 @@ type ProductDetailsPageProps = {
 };
 
 const ProductDetailsPage = ({ product }: ProductDetailsPageProps) => {
-  const { features, includes } = product;
+  const { features, includes, gallery, others } = product;
 
   return (
     <>
       <ProductDetails product={product} />
       <ProductDetailsFeatures features={features} includes={includes} />
+      <ProductDetailsGallery gallery={gallery} />
+      <ProductDetailsOthers others={others} />
       <Categories />
       <Banner />
     </>
