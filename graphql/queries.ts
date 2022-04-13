@@ -79,6 +79,7 @@ export const GET_PRODUCT = gql`
       others {
         name
         slug
+        category
         image {
           desktop
           tablet

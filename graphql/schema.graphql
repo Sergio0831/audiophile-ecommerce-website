@@ -26,6 +26,7 @@ type Includes {
 }
 
 type Others {
+  category: String
   image: Image
   name: String
   slug: String

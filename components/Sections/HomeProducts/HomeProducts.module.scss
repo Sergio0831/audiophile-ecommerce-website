@@ -6,15 +6,18 @@
   display: $d-grid;
   row-gap: $gap-base * 2.4;
   grid-template-rows: 60rem 32rem 42.4rem;
+  padding-top: $padding-base * 12;
 
   @include mobile {
     grid-template-rows: 72rem repeat(2, 32rem);
     row-gap: $gap-base * 3.2;
+    padding-top: $padding-base * 9.6;
   }
 
   @include tablet {
     grid-template-rows: 56rem repeat(2, 32rem);
     row-gap: $gap-base * 4.8;
+    padding-top: $padding-base * 16.8;
   }
 
   .zx9 {

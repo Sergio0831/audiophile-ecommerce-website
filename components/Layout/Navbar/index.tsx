@@ -18,8 +18,6 @@ const Navbar = ({ className }: NavBarProps) => {
     className
   );
 
-  console.log(router.pathname);
-
   return (
     <nav className={navClasses}>
       <ul className={classes.nav__list}>

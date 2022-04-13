@@ -3,14 +3,10 @@
 @use '../../../styles/breakpoints' as *;
 
 .others {
-  padding-bottom: $padding-base * 6.5;
-
-  @include mobile {
-    padding-bottom: $padding-base * 12;
-  }
+  padding-bottom: $padding-base * 17;
 
   @include tablet {
-    padding-bottom: $padding-base * 16;
+    padding-bottom: $padding-base * 24;
   }
 
   h3 {
@@ -29,11 +25,15 @@
   &__items {
     display: $d-grid;
     grid-template-columns: 1fr;
-    column-gap: $gap-base * 3;
+    column-gap: $gap-base * 1;
     row-gap: $gap-base * 5.6;
 
     @include mobile {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tablet {
+      column-gap: $gap-base * 3;
     }
   }
 

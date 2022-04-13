@@ -10,12 +10,18 @@
   background-position: center;
   position: $p-relative;
   border-radius: 5px;
+  margin-bottom: $margin-base * 9;
 
   @include flex($align-items: $align-center);
 
   @include mobile {
     height: 100vh;
     background-image: url(../../../public//assets/home/tablet/image-hero-tablet.webp);
+    margin-bottom: $margin-base * 15;
+  }
+
+  @include tablet {
+    margin-bottom: $margin-base * 20;
   }
 
   @include laptop {

@@ -16,6 +16,7 @@ const ProductDetailsOthers = ({ others }: ProductDetailsOthersProps) => {
           const {
             name,
             slug,
+            category,
             image: { desktop, tablet, mobile }
           } = item;
 
@@ -31,7 +32,7 @@ const ProductDetailsOthers = ({ others }: ProductDetailsOthersProps) => {
                 />
               </div>
               <h5 className='heading-5'>{name}</h5>
-              <Button className='btn-default-1' link={`/${slug}`}>
+              <Button className='btn-default-1' link={`/${category}/${slug}`}>
                 see product
               </Button>
             </article>

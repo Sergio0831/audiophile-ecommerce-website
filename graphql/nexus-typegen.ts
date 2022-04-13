@@ -47,6 +47,7 @@ export interface NexusGenObjects {
     quantity?: number | null; // Int
   }
   Others: { // root type
+    category?: string | null; // String
     image?: NexusGenRootTypes['Image'] | null; // Image
     name?: string | null; // String
     slug?: string | null; // String
@@ -100,6 +101,7 @@ export interface NexusGenFieldTypes {
     quantity: number | null; // Int
   }
   Others: { // field return type
+    category: string | null; // String
     image: NexusGenRootTypes['Image'] | null; // Image
     name: string | null; // String
     slug: string | null; // String
@@ -148,6 +150,7 @@ export interface NexusGenFieldTypeNames {
     quantity: 'Int'
   }
   Others: { // field return type name
+    category: 'String'
     image: 'Image'
     name: 'String'
     slug: 'String'

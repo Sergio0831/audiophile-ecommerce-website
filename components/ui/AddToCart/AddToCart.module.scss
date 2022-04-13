@@ -17,7 +17,7 @@
     color: rgba($clr-black, 0.25);
     width: 1.6rem;
     height: $height-base;
-    font-size: $fs-micro;
+    font-size: $fs-base;
 
     &:hover {
       color: $clr-primary;
@@ -25,7 +25,7 @@
   }
 
   span {
-    font-size: $fs-nano;
+    font-size: $fs-base;
     font-weight: $fw-bold;
   }
 }

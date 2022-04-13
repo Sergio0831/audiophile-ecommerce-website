@@ -9,12 +9,12 @@
   padding-bottom: $padding-base * 12;
 
   @include mobile {
-    padding-top: $padding-base * 12;
+    padding-top: $padding-base * 17;
   }
 
   @include laptop {
     row-gap: $gap-base * 16;
     padding-top: $padding-base * 16;
-    padding-bottom: $padding-base * 16;
+    padding-bottom: $padding-base * 24;
   }
 }

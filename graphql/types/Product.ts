@@ -32,6 +32,7 @@ const Others = objectType({
   definition(t) {
     t.string('slug');
     t.string('name');
+    t.string('category');
     t.field('image', { type: Image });
   }
 });
