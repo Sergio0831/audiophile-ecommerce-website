@@ -11,7 +11,8 @@ const Layout = ({ children }: LayoutPops) => {
   return (
     <>
       <Header />
-      {/* <Overlay /> */}
+      <Overlay />
+      <MobileNav />
       <main>{children}</main>
       <Footer />
     </>

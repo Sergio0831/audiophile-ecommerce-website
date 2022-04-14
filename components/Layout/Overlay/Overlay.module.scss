@@ -8,4 +8,12 @@
 
   z-index: 5;
   background-color: rgba($clr-black, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition, visibility $transition;
+
+  &__visible {
+    opacity: 1;
+    visibility: visible;
+  }
 }

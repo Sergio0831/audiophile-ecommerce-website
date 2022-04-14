@@ -21,7 +21,9 @@ const Button = ({
   if (link) {
     return (
       <Link href={link}>
-        <a className={className}>{children}</a>
+        <a className={className} onClick={onClick}>
+          {children}
+        </a>
       </Link>
     );
   }

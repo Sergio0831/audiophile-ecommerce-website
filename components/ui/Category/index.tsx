@@ -1,3 +1,5 @@
+import { useAppDispatch } from '../../../app/hooks';
+import { close } from '../../../features/mobileNav/mobileNavSlice';
 import { CategoryTypes } from '../../../types/category-type';
 import Button from '../Button';
 import Image from '../Image';
@@ -8,8 +10,14 @@ type CategoryProps = {
 };
 
 const Category = ({ category }: CategoryProps) => {
+  const dispatch = useAppDispatch();
+
   return (
-    <Button link={`/${category.category}`} className={classes.category}>
+    <Button
+      link={`/${category.category}`}
+      className={classes.category}
+      onClick={() => dispatch(close())}
+    >
       <div className={classes.category__image}>
         <Image
           desktopWebp={`/assets/shared/desktop/${category.category}.webp`}
