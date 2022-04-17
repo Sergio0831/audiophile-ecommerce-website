@@ -23,6 +23,10 @@
     padding-bottom: $padding-base * 6.7;
   }
 
+  @include tablet {
+    display: none;
+  }
+
   &__visible {
     opacity: 1;
     visibility: visible;

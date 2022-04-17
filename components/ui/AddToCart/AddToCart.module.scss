@@ -3,29 +3,28 @@
 @use '../../../styles/breakpoints' as *;
 
 .addToCart {
-  @include flex(
-    $align-items: $align-center,
-    $justify-content: $justify-between
-  );
-
+  display: $d-grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: $align-center;
+  text-align: $align-center;
   width: 12rem;
-  padding: $padding-base * 1.5;
   background-color: $clr-light;
+  border: 1px solid $clr-light;
 
   button {
+    height: $height-base;
     background-color: transparent;
     color: rgba($clr-black, 0.25);
-    width: 1.6rem;
-    height: $height-base;
-    font-size: $fs-base;
+    font-size: $fs-h4;
 
     &:hover {
       color: $clr-primary;
+      background-color: darken($clr-light, 5%);
     }
   }
 
   span {
-    font-size: $fs-base;
+    font-size: $fs-h4;
     font-weight: $fw-bold;
   }
 }

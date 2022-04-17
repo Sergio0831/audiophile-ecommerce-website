@@ -1,0 +1,29 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.product {
+  display: $d-grid;
+  grid-template-columns: max-content 1fr max-content;
+  justify-content: $justify-center;
+  align-items: $align-center;
+
+  img {
+    border-radius: $radius-base;
+  }
+
+  &__name,
+  &__price {
+    font-weight: $fw-bold;
+    margin-left: $margin-base * 1.6;
+  }
+
+  &__price {
+    opacity: 0.5;
+  }
+
+  &__qty {
+    width: 9.6rem;
+    height: 3.2rem;
+  }
+}

@@ -2,7 +2,10 @@ import { ProductType } from '../../../types/product-types';
 import AddToCart from '../../ui/AddToCart';
 import Button from '../../ui/Button';
 import Image from '../../ui/Image';
+import { useAppDispatch } from '../../../app/hooks';
 import classes from './ProductDetails.module.scss';
+import { addToCart } from '../../../features/cart/cartSlice';
+import { ProductToCart } from '../../../types/productToCart-types';
 
 type ProductDetailsProsp = {
   product: ProductType;
@@ -12,11 +15,22 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
   const {
     image: { desktop, tablet, mobile },
     new: newProduct,
+    id,
     name,
     description,
     price,
-    category
+    category,
+    slug
   } = product;
+
+  const productToCart: ProductToCart = {
+    id,
+    name,
+    price,
+    image: `/assets/cart/image-${slug}.jpg`
+  };
+
+  const dispatch = useAppDispatch();
 
   return (
     <section className={`${classes.product} section-center`}>
@@ -45,7 +59,12 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
         <h6 className='heading-6'>$ {Intl.NumberFormat().format(price)}</h6>
         <div className={classes.product__toCart}>
           <AddToCart />
-          <Button className='btn-default-1'>add to cart</Button>
+          <Button
+            className='btn-default-1'
+            onClick={() => dispatch(addToCart(productToCart))}
+          >
+            add to cart
+          </Button>
         </div>
       </div>
     </section>

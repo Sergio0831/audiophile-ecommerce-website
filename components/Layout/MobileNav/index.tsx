@@ -2,19 +2,23 @@ import clsx from 'clsx';
 import Categories from '../../Sections/Categories';
 import classes from './MobileNav.module.scss';
 import { useAppSelector } from '../../../app/hooks';
+import Overlay from '../Overlay';
 
 const MobileNav = () => {
-  const open = useAppSelector((state) => state.mobileNav.open);
+  const openNav = useAppSelector((state) => state.mobileNav.open);
 
   const mobileNavClasses = clsx({
     [classes.nav]: true,
-    [classes.nav__visible]: open
+    [classes.nav__visible]: openNav
   });
 
   return (
-    <nav className={mobileNavClasses}>
-      <Categories />
-    </nav>
+    <>
+      {openNav && <Overlay navOverlay showOverlay={openNav ? true : false} />}
+      <nav className={mobileNavClasses}>
+        <Categories />
+      </nav>
+    </>
   );
 };
 
