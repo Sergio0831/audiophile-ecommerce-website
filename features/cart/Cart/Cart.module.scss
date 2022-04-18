@@ -59,8 +59,8 @@
 
   &__products {
     display: $d-grid;
-    justify-content: $justify-center;
     align-items: $align-center;
+    text-align: $align-center;
     row-gap: $gap-base * 2.4;
     padding: $padding-base * 3.2 0;
   }

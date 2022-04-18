@@ -3,15 +3,15 @@
 @use '../../../styles/breakpoints' as *;
 
 .menu {
-  display: none;
-
-  &__label {
-    display: $d-block;
+  &__btn {
+    display: block;
     width: 1.6rem;
     height: 1.5rem;
     cursor: pointer;
+    background: transparent;
+    border: none;
 
-    div {
+    span {
       position: $p-relative;
       top: 0;
       height: 3px;
@@ -39,25 +39,24 @@
     }
   }
 
-  &:checked + label div:first-child {
-    top: -1.5px;
-    right: 1px;
-    transform: rotateZ(45deg);
-  }
+  &__open {
+    span:first-child {
+      top: -1.5px;
+      right: 1px;
+      transform: rotateZ(45deg);
+    }
 
-  &:checked + label div:last-child {
-    top: 1.5px;
-    right: 1px;
-    transform: rotateZ(45deg);
-  }
+    span:last-child {
+      top: 1.5px;
+      right: 1px;
+      transform: rotateZ(45deg);
+    }
 
-  &:checked + label div:nth-child(2) {
-    width: 2.1rem;
-    top: 1px;
-    right: 4px;
-    transform: rotateZ(-45deg);
+    span:nth-child(2) {
+      width: 2.1rem;
+      top: 1px;
+      right: 4px;
+      transform: rotateZ(-45deg);
+    }
   }
-}
-
-.open {
 }

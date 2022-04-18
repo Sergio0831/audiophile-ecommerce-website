@@ -1,30 +1,47 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import { useAppSelector } from '../../../app/hooks';
+import { useRef } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import Overlay from '../../../components/Layout/Overlay';
 import Button from '../../../components/ui/Button';
+import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
 import CartProduct from '../CartProduct';
+import { clearCart, closeCart } from '../cartSlice';
 import classes from './Cart.module.scss';
 
 const Cart = () => {
   const cartOpen = useAppSelector((state) => state.cart.cartOpen);
   const cartItems = useAppSelector((state) => state.cart.cartItems);
+  const dispatch = useAppDispatch();
   const router = useRouter();
+  const cartRef = useRef<HTMLDivElement>(null);
 
   const cartClasses = clsx({
     [classes.cart]: true,
     [classes.cart__home]: router.pathname === '/'
   });
 
+  const closeOutsideClick = () => {
+    dispatch(closeCart());
+  };
+
+  useOnClickOutside(cartRef, closeOutsideClick);
+
   return (
     <>
       {cartOpen && <Overlay showOverlay={cartOpen ? true : false} />}
       <section className={`${classes.wrapper} section-center`}>
-        <div className={cartClasses} onClick={(e) => e.stopPropagation()}>
+        <div className={cartClasses} ref={cartRef}>
           <div className={classes.cart__qty}>
             <h6 className='heading-6'>cart ({cartItems.length})</h6>
             {cartItems.length > 0 && (
-              <Button className={`${classes.cart__remove} btn`}>
+              <Button
+                className={`${classes.cart__remove} btn`}
+                onClick={(e) => {
+                  dispatch(clearCart());
+                  e.stopPropagation();
+                }}
+              >
                 remove all
               </Button>
             )}
@@ -46,6 +63,7 @@ const Cart = () => {
             <Button
               className={`${classes.cart__link} btn-default-1`}
               link='/checkout'
+              onClick={() => dispatch(closeCart())}
             >
               checkout
             </Button>

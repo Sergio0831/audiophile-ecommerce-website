@@ -24,6 +24,7 @@
   &__backLink {
     text-transform: capitalize;
     opacity: 0.5;
+    transition: color $transition;
 
     @include position($position: $p-absolute, $top: 1.6rem, $left: 2.4rem);
 
@@ -33,6 +34,10 @@
 
     @include large-laptop {
       left: auto;
+    }
+
+    &:hover {
+      color: $clr-primary;
     }
   }
 

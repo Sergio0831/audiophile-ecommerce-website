@@ -7,7 +7,7 @@ type ButtonProps = {
   link?: string;
   name?: string;
   children?: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
 };
 
 const Button = ({

@@ -7,7 +7,7 @@ import MenuBtn from '../../ui/MenuBtn';
 import { useAppDispatch } from '../../../app/hooks';
 import Navbar from '../Navbar';
 import classes from './Header.module.scss';
-import { toggleCart } from '../../../features/cart/cartSlice';
+import { closeCart, toggleCart } from '../../../features/cart/cartSlice';
 
 const Header = () => {
   const router = useRouter();

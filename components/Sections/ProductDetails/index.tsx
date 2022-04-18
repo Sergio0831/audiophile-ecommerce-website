@@ -4,8 +4,9 @@ import Button from '../../ui/Button';
 import Image from '../../ui/Image';
 import { useAppDispatch } from '../../../app/hooks';
 import classes from './ProductDetails.module.scss';
-import { addToCart } from '../../../features/cart/cartSlice';
+import { addToCart, openCart } from '../../../features/cart/cartSlice';
 import { ProductToCart } from '../../../types/productToCart-types';
+import { formatPrice } from '../../../helpers/formatPrice';
 
 type ProductDetailsProsp = {
   product: ProductType;
@@ -31,6 +32,10 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
   };
 
   const dispatch = useAppDispatch();
+  const cartButtonClick = () => {
+    dispatch(addToCart(productToCart));
+    dispatch(openCart());
+  };
 
   return (
     <section className={`${classes.product} section-center`}>
@@ -56,13 +61,10 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
         ) : null}
         <h2 className='heading-2'>{name}</h2>
         <p>{description}</p>
-        <h6 className='heading-6'>$ {Intl.NumberFormat().format(price)}</h6>
+        <h6 className='heading-6'>$ {formatPrice(price)}</h6>
         <div className={classes.product__toCart}>
           <AddToCart />
-          <Button
-            className='btn-default-1'
-            onClick={() => dispatch(addToCart(productToCart))}
-          >
+          <Button className='btn-default-1' onClick={cartButtonClick}>
             add to cart
           </Button>
         </div>

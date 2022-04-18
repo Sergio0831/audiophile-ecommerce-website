@@ -1,25 +1,25 @@
 import classes from './MenuBtn.module.scss';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { toggle } from '../../../features/mobileNav/mobileNavSlice';
+import Button from '../Button';
+import clsx from 'clsx';
 
 const MenuBtn = () => {
   const dispatch = useAppDispatch();
   const open = useAppSelector((state) => state.mobileNav.open);
 
+  const btnClasses = clsx({
+    [classes.menu__btn]: true,
+    [classes.menu__open]: open
+  });
+
   return (
     <>
-      <input
-        type='checkbox'
-        id='menu-checkbox'
-        className={classes.menu}
-        onChange={() => dispatch(toggle())}
-        checked={open}
-      />
-      <label htmlFor='menu-checkbox' className={classes.menu__label}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </label>
+      <Button className={btnClasses} onClick={() => dispatch(toggle())}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </Button>
     </>
   );
 };

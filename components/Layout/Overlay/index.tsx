@@ -2,7 +2,7 @@ import classes from './Overlay.module.scss';
 import clsx from 'clsx';
 
 type OverlayProps = {
-  showOverlay: boolean;
+  showOverlay?: boolean;
   navOverlay?: boolean;
 };
 

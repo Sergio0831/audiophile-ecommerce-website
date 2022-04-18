@@ -10,11 +10,12 @@ type LayoutPops = {
 
 const Layout = ({ children }: LayoutPops) => {
   const cartOpen = useAppSelector((state) => state.cart.cartOpen);
+  const navOpen = useAppSelector((state) => state.mobileNav.open);
 
   return (
     <>
       <Header />
-      <MobileNav />
+      {navOpen && <MobileNav />}
       {cartOpen && <Cart />}
       <main>{children}</main>
       <Footer />
