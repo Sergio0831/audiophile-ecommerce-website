@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import Overlay from '../../../components/Layout/Overlay';
 import Button from '../../../components/ui/Button';
@@ -11,7 +11,9 @@ import classes from './Cart.module.scss';
 
 const Cart = () => {
   const cartOpen = useAppSelector((state) => state.cart.cartOpen);
-  const cartItems = useAppSelector((state) => state.cart.cartItems);
+  const { cartItems, cartTotalQuantity } = useAppSelector(
+    (state) => state.cart
+  );
   const dispatch = useAppDispatch();
   const router = useRouter();
   const cartRef = useRef<HTMLDivElement>(null);
@@ -33,7 +35,7 @@ const Cart = () => {
       <section className={`${classes.wrapper} section-center`}>
         <div className={cartClasses} ref={cartRef}>
           <div className={classes.cart__qty}>
-            <h6 className='heading-6'>cart ({cartItems.length})</h6>
+            <h6 className='heading-6'>cart ({cartTotalQuantity})</h6>
             {cartItems.length > 0 && (
               <Button
                 className={`${classes.cart__remove} btn`}

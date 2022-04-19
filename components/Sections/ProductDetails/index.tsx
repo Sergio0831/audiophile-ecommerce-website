@@ -1,5 +1,4 @@
 import { ProductType } from '../../../types/product-types';
-import AddToCart from '../../ui/AddToCart';
 import Button from '../../ui/Button';
 import Image from '../../ui/Image';
 import { useAppDispatch } from '../../../app/hooks';
@@ -7,6 +6,7 @@ import classes from './ProductDetails.module.scss';
 import { addToCart, openCart } from '../../../features/cart/cartSlice';
 import { ProductToCart } from '../../../types/productToCart-types';
 import { formatPrice } from '../../../helpers/formatPrice';
+import AmountButtons from '../../ui/AmountButtons';
 
 type ProductDetailsProsp = {
   product: ProductType;
@@ -63,7 +63,7 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
         <p>{description}</p>
         <h6 className='heading-6'>$ {formatPrice(price)}</h6>
         <div className={classes.product__toCart}>
-          <AddToCart />
+          {/* <AmountButtons /> */}
           <Button className='btn-default-1' onClick={cartButtonClick}>
             add to cart
           </Button>
