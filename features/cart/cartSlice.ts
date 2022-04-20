@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
       if (productToAdd) {
         productToAdd.quantity += 1;
       } else {
-        state.cartItems.push({ ...payload, quantity: 1 });
+        state.cartItems.push({ ...payload });
       }
 
       localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
@@ -65,6 +65,23 @@ export const cartSlice = createSlice({
 
         localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
       }
+    },
+    cartTotal: (state) => {
+      const { totalItems, totalAmount } = state.cartItems.reduce(
+        (total, cartItem) => {
+          const { quantity, price } = cartItem;
+          total.totalItems += quantity;
+          total.totalAmount += price * quantity;
+          return total;
+        },
+        {
+          totalItems: 0,
+          totalAmount: 0
+        }
+      );
+
+      state.cartTotalQuantity = totalItems;
+      state.cartTotalAmount = totalAmount;
     }
   }
 });
@@ -76,6 +93,7 @@ export const {
   addToCart,
   clearCart,
   increaseQty,
-  decreaseQty
+  decreaseQty,
+  cartTotal
 } = cartSlice.actions;
 export default cartSlice.reducer;

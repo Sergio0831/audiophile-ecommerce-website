@@ -7,12 +7,15 @@ import { addToCart, openCart } from '../../../features/cart/cartSlice';
 import { ProductToCart } from '../../../types/productToCart-types';
 import { formatPrice } from '../../../helpers/formatPrice';
 import AmountButtons from '../../ui/AmountButtons';
+import { useState } from 'react';
 
 type ProductDetailsProsp = {
   product: ProductType;
 };
 
 const ProductDetails = ({ product }: ProductDetailsProsp) => {
+  const [quantity, setQuantity] = useState<number>(1);
+
   const {
     image: { desktop, tablet, mobile },
     new: newProduct,
@@ -24,10 +27,26 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
     slug
   } = product;
 
+  const increase = () => {
+    setQuantity((oldQuantity) => oldQuantity + 1);
+  };
+
+  const decrease = () => {
+    setQuantity((oldQuantity) => {
+      let tempQuantity = oldQuantity - 1;
+
+      if (tempQuantity < 1) {
+        tempQuantity = 1;
+      }
+      return tempQuantity;
+    });
+  };
+
   const productToCart: ProductToCart = {
     id,
     name,
     price,
+    quantity,
     image: `/assets/cart/image-${slug}.jpg`
   };
 
@@ -63,7 +82,11 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
         <p>{description}</p>
         <h6 className='heading-6'>$ {formatPrice(price)}</h6>
         <div className={classes.product__toCart}>
-          {/* <AmountButtons /> */}
+          <AmountButtons
+            amount={quantity}
+            increase={increase}
+            decrease={decrease}
+          />
           <Button className='btn-default-1' onClick={cartButtonClick}>
             add to cart
           </Button>

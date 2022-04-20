@@ -3,5 +3,5 @@ export type ProductToCart = {
   image: string;
   name: string;
   price: number;
-  quantity?: number;
+  quantity: number;
 };
