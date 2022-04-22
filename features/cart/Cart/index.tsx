@@ -6,8 +6,9 @@ import Overlay from '../../../components/Layout/Overlay';
 import Button from '../../../components/ui/Button';
 import { formatPrice } from '../../../helpers/formatPrice';
 import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
-import CartProduct from '../CartProduct';
+import CartProducts from '../CartProducts';
 import { cartTotal, clearCart, closeCart } from '../cartSlice';
+import CartTotal from '../CartTotal';
 import classes from './Cart.module.scss';
 
 const Cart = () => {
@@ -51,19 +52,12 @@ const Cart = () => {
               </Button>
             )}
           </div>
-          <div className={classes.cart__products}>
-            {cart.cartTotalQuantity > 0 ? (
-              cart.cartItems.map((item) => (
-                <CartProduct key={item.id} product={item} />
-              ))
-            ) : (
-              <h6 className='heading-6'>your cart is empty!</h6>
-            )}
-          </div>
-          <div className={classes.cart__total}>
-            <p>total</p>
-            <h6 className='heading-6'>$ {formatPrice(cart.cartTotalAmount)}</h6>
-          </div>
+          <CartProducts
+            cartItems={cart.cartItems}
+            cartTotal={cart.cartTotalAmount}
+            cart
+          />
+          <CartTotal cartTotalAmount={cart.cartTotalAmount} />
           {cart.cartTotalQuantity > 0 && (
             <Button
               className={`${classes.cart__link} btn-default-1`}

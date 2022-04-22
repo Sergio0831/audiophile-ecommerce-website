@@ -16,7 +16,7 @@ body {
   font-family: $font-base;
   color: $clr-black;
   position: $p-relative;
-  // overflow: hidden;
+  background-color: $clr-lighter;
 
   @include font(
     $font-size: $fs-base,
@@ -55,6 +55,26 @@ span {
   @include large-laptop {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+.backLink {
+  text-transform: capitalize;
+  opacity: 0.5;
+  transition: color $transition;
+
+  @include position($position: $p-absolute, $top: 1.6rem, $left: 2.4rem);
+
+  @include tablet {
+    top: 3rem;
+  }
+
+  @include large-laptop {
+    left: auto;
+  }
+
+  &:hover {
+    color: $clr-primary;
   }
 }
 

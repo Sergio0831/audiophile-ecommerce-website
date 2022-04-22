@@ -1,0 +1,9 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.form {
+  background-color: $clr-white;
+  border-radius: $radius-base;
+  height: 120rem;
+}

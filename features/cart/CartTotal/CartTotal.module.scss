@@ -1,0 +1,26 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.total {
+  li {
+    @include flex($justify-content: $justify-between);
+    margin-bottom: $margin-base * 0.8;
+
+    &:last-child {
+      margin-bottom: $margin-base * 3.2;
+    }
+
+    p {
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+  }
+
+  &__grand {
+    margin-top: $margin-base * 2.4;
+
+    h6 {
+      color: $clr-primary;
+    }
+  }
+}

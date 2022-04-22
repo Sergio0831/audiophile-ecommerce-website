@@ -58,7 +58,7 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
 
   return (
     <section className={`${classes.product} section-center`}>
-      <Button link={`/${category}`} className={classes.product__backLink}>
+      <Button link={`/${category}`} className='backLink'>
         go back
       </Button>
       <div className={classes.product__image}>

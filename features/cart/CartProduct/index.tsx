@@ -9,12 +9,12 @@ import classes from './CartProduct.module.scss';
 
 type CartProductProps = {
   product: ProductToCart;
+  cart?: boolean;
 };
 
-const CartProduct = ({ product }: CartProductProps) => {
+const CartProduct = ({ product, cart }: CartProductProps) => {
   const { id, image, name, price, quantity } = product;
   const dispatch = useAppDispatch();
-  const amount = useAppSelector((state) => state.cart.cartTotalQuantity);
 
   const increase = () => {
     dispatch(increaseQty(id));
@@ -27,18 +27,24 @@ const CartProduct = ({ product }: CartProductProps) => {
   return (
     <article className={classes.product}>
       <Image width={64} height={64} src={image} />
-      <div>
-        <p className={classes.product__name}>{shortName(name)}</p>
-        <p className={classes.product__price}>
-          $ {formatPrice(price * quantity!)}
-        </p>
+      <div className={classes.product__content}>
+        <div>
+          <p className={classes.product__name}>{shortName(name)}</p>
+          <p className={classes.product__price}>
+            $ {formatPrice(price * quantity!)}
+          </p>
+        </div>
+        {cart ? (
+          <AmountButtons
+            increase={increase}
+            decrease={decrease}
+            amount={quantity!}
+            className={classes.product__amount}
+          />
+        ) : (
+          <p className={classes.product__qty}>x{quantity}</p>
+        )}
       </div>
-      <AmountButtons
-        increase={increase}
-        decrease={decrease}
-        amount={quantity!}
-        className={classes.product__qty}
-      />
     </article>
   );
 };

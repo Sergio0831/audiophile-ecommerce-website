@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.checkout {
+  display: $d-grid;
+  grid-template-columns: 1fr 35rem;
+  column-gap: $gap-base * 3;
+  row-gap: $gap-base * 3.2;
+  position: $p-relative;
+  padding-top: $padding-base * 6.5;
+  padding-bottom: $padding-base * 10;
+
+  @include mobile {
+    padding-top: $padding-base * 10;
+    padding-bottom: $padding-base * 10;
+  }
+
+  @include tablet {
+    padding-top: $padding-base * 14;
+    padding-bottom: $padding-base * 14;
+  }
+}

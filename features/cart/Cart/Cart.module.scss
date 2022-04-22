@@ -57,25 +57,6 @@
     }
   }
 
-  &__products {
-    display: $d-grid;
-    align-items: $align-center;
-    text-align: $align-center;
-    row-gap: $gap-base * 2.4;
-    padding: $padding-base * 3.2 0;
-  }
-
-  &__total {
-    @include flex($justify-content: $justify-between);
-
-    margin-bottom: $margin-base * 2.4;
-
-    p {
-      text-transform: uppercase;
-      opacity: 0.5;
-    }
-  }
-
   &__link {
     width: $width-base;
   }

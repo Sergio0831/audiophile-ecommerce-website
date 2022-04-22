@@ -4,7 +4,8 @@
 
 .product {
   display: $d-grid;
-  grid-template-columns: max-content 1fr max-content;
+  grid-template-columns: max-content 1fr;
+  column-gap: $gap-base * 1.6;
   justify-content: $justify-center;
   align-items: $align-center;
 
@@ -12,10 +13,13 @@
     border-radius: $radius-base;
   }
 
+  &__content {
+    @include flex($justify-content: $justify-between);
+  }
+
   &__name,
   &__price {
     font-weight: $fw-bold;
-    margin-left: $margin-base * 1.6;
     text-align: start;
   }
 
@@ -23,8 +27,13 @@
     opacity: 0.5;
   }
 
-  &__qty {
+  &__amount {
     width: 9.6rem;
     height: 3.2rem;
+    align-self: $align-center;
+  }
+
+  &__qty {
+    opacity: 0.5;
   }
 }

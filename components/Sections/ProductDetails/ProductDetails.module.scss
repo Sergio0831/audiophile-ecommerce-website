@@ -21,26 +21,6 @@
     padding-bottom: $padding-base * 16;
   }
 
-  &__backLink {
-    text-transform: capitalize;
-    opacity: 0.5;
-    transition: color $transition;
-
-    @include position($position: $p-absolute, $top: 1.6rem, $left: 2.4rem);
-
-    @include tablet {
-      top: 3rem;
-    }
-
-    @include large-laptop {
-      left: auto;
-    }
-
-    &:hover {
-      color: $clr-primary;
-    }
-  }
-
   &__new {
     color: $clr-primary;
     margin-bottom: $margin-base * 1.6;

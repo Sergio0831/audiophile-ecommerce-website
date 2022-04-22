@@ -30,6 +30,7 @@
 .cart {
   @include flex($align-items: $align-center);
 
+  position: relative;
   cursor: pointer;
   border: none;
   background-color: transparent;
