@@ -1,0 +1,25 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.form {
+  display: $d-grid;
+  row-gap: $gap-base * 5;
+
+  fieldset {
+    display: $d-grid;
+    row-gap: $gap-base * 2.4;
+    border: none;
+  }
+
+  legend {
+    margin-bottom: $margin-base * 1.6;
+    text-transform: uppercase;
+    color: $clr-primary;
+  }
+
+  &__billing {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $gap-base * 1.6;
+  }
+}

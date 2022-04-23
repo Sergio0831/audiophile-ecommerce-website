@@ -1,0 +1,22 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.label {
+  @include font(
+    $font-size: 1.2rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.6rem
+  );
+
+  display: $d-grid;
+  row-gap: 9px;
+  letter-spacing: -0.214286px;
+  text-transform: capitalize;
+}
+
+.input {
+  padding: $padding-base * 1.8 $padding-base * 2.4;
+  background-color: $clr-white;
+  border: 1px solid $clr-input-border;
+  border-radius: $radius-base;
+}

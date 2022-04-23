@@ -1,6 +1,6 @@
 import Button from '../../ui/Button';
-import CheckoutForm from '../../ui/CheckoutForm';
 import Summary from '../../ui/Summary';
+import CheckoutForm from '../CheckoutForm';
 import classes from './Checkout.module.scss';
 
 const Checkout = () => {
