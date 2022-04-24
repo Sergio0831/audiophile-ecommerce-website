@@ -7,8 +7,12 @@ type InputProps = {
   type?: string;
   id: string;
   name: string;
-  placeholder: string;
+  placeholder?: string;
   className?: string;
+  value?: string;
+  checked?: boolean;
+  radio?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input = ({
@@ -18,11 +22,16 @@ const Input = ({
   id,
   name,
   placeholder,
-  className
+  className,
+  value,
+  checked,
+  radio,
+  onChange
 }: InputProps) => {
   const labelClasses = clsx(
     {
-      [classes.label]: true
+      [classes.label]: true,
+      [classes.radio]: radio
     },
     className
   );
@@ -42,7 +51,11 @@ const Input = ({
         name={name}
         placeholder={placeholder}
         className={inputClasses}
+        value={value}
+        checked={checked}
+        onChange={onChange}
       />
+      {radio && <span></span>}
     </label>
   );
 };

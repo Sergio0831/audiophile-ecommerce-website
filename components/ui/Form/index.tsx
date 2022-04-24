@@ -1,7 +1,14 @@
+import { useState } from 'react';
 import Input from '../Input';
+import CashIcon from '../CashIcon';
 import classes from './Form.module.scss';
 
 const Form = () => {
+  const [payment, setPayment] = useState('');
+
+  const handleRadioClick = (e: React.ChangeEvent<HTMLInputElement>): void =>
+    setPayment(e.target.value);
+
   return (
     <form className={classes.form}>
       <fieldset className={classes.form__billing}>
@@ -13,58 +20,104 @@ const Form = () => {
           name='name'
           label='name'
         />
-        <label htmlFor='email'>
-          Email Address
-          <input
-            type='email'
-            id='email'
-            name='email'
-            placeholder='alexei@mail.com'
-          />
-        </label>
-        <label htmlFor='tel'>
-          Phone Number
-          <input type='tel' id='tel' name='tel' placeholder='' />
-        </label>
+        <Input
+          htmlFor='email'
+          label='email address'
+          type='email'
+          id='email'
+          name='email'
+          placeholder='alexei@mail.com'
+        />
+        <Input
+          label='phone number'
+          htmlFor='tel'
+          type='tel'
+          id='tel'
+          name='tel'
+          placeholder='+1 202-555-0136'
+        />
       </fieldset>
       <fieldset className={classes.form__shipping}>
         <legend className='sub-title'>shipping info</legend>
-        <label htmlFor='address'>
-          Address
-          <input type='text' id='address' name='address' />
-        </label>
-        <label htmlFor='code'>
-          ZIP Code
-          <input type='text' id='code' name='code' />
-        </label>
-        <label htmlFor='city'>
-          City
-          <input type='text' id='city' name='city' />
-        </label>
-        <label htmlFor='country'>
-          Country
-          <input type='text' id='country' name='country' />
-        </label>
+        <Input
+          label='address'
+          htmlFor='address'
+          id='address'
+          name='address'
+          placeholder='1137 Williams Avenue'
+        />
+        <Input
+          label='ZIP code'
+          htmlFor='code'
+          placeholder='10001'
+          id='code'
+          name='code'
+        />
+        <Input
+          label='city'
+          htmlFor='city'
+          id='city'
+          name='city'
+          placeholder='Dublin'
+        />
+        <Input
+          label='country'
+          htmlFor='country'
+          id='country'
+          name='country'
+          placeholder='Ireland'
+        />
       </fieldset>
       <fieldset className={classes.form__payment}>
         <legend className='sub-title'>payment details</legend>
-        <label htmlFor='payment'>Payment Method</label>
-        <label htmlFor='money'>
-          e-Money
-          <input type='radio' id='money' name='money' />
-        </label>
-        <label htmlFor='cash'>
-          Cash on Delivery
-          <input type='radio' id='cash' name='cash' />
-        </label>
-        <label htmlFor='number'>
-          e-Money Number
-          <input type='text' id='number' name='number' />
-        </label>
-        <label htmlFor='tel'>
-          e-Money PIN
-          <input type='text' id='pin' name='pin' />
-        </label>
+        <h6>Payment Method</h6>
+        <Input
+          htmlFor='money'
+          type='radio'
+          id='money'
+          name='payment'
+          label='e-Money'
+          value='money'
+          radio
+          onChange={handleRadioClick}
+        />
+        <Input
+          label='Cash on Delivery'
+          htmlFor='cash'
+          type='radio'
+          id='cash'
+          name='payment'
+          value='cash'
+          radio
+          onChange={handleRadioClick}
+        />
+        {payment === 'money' ? (
+          <>
+            <Input
+              htmlFor='number'
+              id='number'
+              name='number'
+              label='e-Money Number'
+              placeholder='238521993'
+            />
+            <Input
+              label=' e-Money PIN'
+              id='pin'
+              name='pin'
+              htmlFor='pin'
+              placeholder='5891'
+            />
+          </>
+        ) : (
+          <div className={classes.cash}>
+            <CashIcon />
+            <p>
+              The ‘Cash on Delivery’ option enables you to pay in cash when our
+              delivery courier arrives at your residence. Just make sure your
+              address is correct so that your order will not be cancelled.
+            </p>
+          </div>
+        )}
       </fieldset>
     </form>
   );

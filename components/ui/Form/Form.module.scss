@@ -10,6 +10,7 @@
     display: $d-grid;
     row-gap: $gap-base * 2.4;
     border: none;
+    column-gap: $gap-base * 1.6;
   }
 
   legend {
@@ -20,6 +21,49 @@
 
   &__billing {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: $gap-base * 1.6;
+  }
+
+  &__shipping {
+    grid-template-columns: repeat(2, 1fr);
+
+    label {
+      &:nth-child(2) {
+        grid-column: 1 / 3;
+      }
+    }
+  }
+
+  &__payment {
+    grid-template-columns: repeat(2, 1fr);
+
+    h6 {
+      @include font(
+        $font-size: 1.2rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.6rem
+      );
+    }
+
+    label {
+      &:nth-child(2) {
+        grid-column: 1 / 2;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        grid-column: 2 / 3;
+      }
+    }
+  }
+
+  .cash {
+    display: flex;
+    justify-content: space-between;
+    grid-column: span 2;
+
+    svg {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
   }
 }

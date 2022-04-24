@@ -19,4 +19,67 @@
   background-color: $clr-white;
   border: 1px solid $clr-input-border;
   border-radius: $radius-base;
+  caret-color: $clr-primary;
+  transition: border-color $transition;
+  outline: none;
+
+  @include font(
+    $font-size: $fs-micro,
+    $font-weight: $fw-bold,
+    $line-height: 1.9rem
+  );
+
+  letter-spacing: -0.25px;
+
+  &::placeholder {
+    color: rgba($clr-black, 0.4);
+  }
+
+  &:focus,
+  &:active {
+    border-color: $clr-primary;
+  }
+
+  &:hover {
+    border-color: $clr-primary;
+  }
+}
+
+.radio {
+  @include flex($align-items: $align-center, $justify-content: $justify-end);
+
+  flex-direction: row-reverse;
+  padding: $padding-base * 1.8 0 $padding-base * 1.8 $padding-base * 1.6;
+  cursor: pointer;
+  border: 1px solid $clr-input-border;
+  border-radius: $radius-base;
+  transition: border-color $transition;
+  font-size: $fs-micro;
+
+  input {
+  }
+
+  span {
+    @include flex(
+      $justify-content: $justify-center,
+      $align-items: $align-center
+    );
+
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid $clr-input-border;
+    border-radius: $radius-round;
+
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 1rem;
+      border-radius: $radius-round;
+      background-color: $clr-primary;
+    }
+  }
+
+  &:hover {
+    border-color: $clr-primary;
+  }
 }
