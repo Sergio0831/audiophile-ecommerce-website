@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import Overlay from '../../../components/Layout/Overlay';
 import Button from '../../../components/ui/Button';
-import { formatPrice } from '../../../helpers/formatPrice';
+import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
 import CartProducts from '../CartProducts';
-import { cartTotal, clearCart, closeCart } from '../cartSlice';
+import { clearCart, closeCart } from '../cartSlice';
 import CartTotal from '../CartTotal';
 import classes from './Cart.module.scss';
 
@@ -28,10 +28,6 @@ const Cart = () => {
   };
 
   useOnClickOutside(cartRef, closeOutsideClick);
-
-  useEffect(() => {
-    dispatch(cartTotal());
-  }, [dispatch, cart]);
 
   return (
     <>

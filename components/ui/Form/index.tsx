@@ -2,15 +2,17 @@ import { useState } from 'react';
 import Input from '../Input';
 import CashIcon from '../CashIcon';
 import classes from './Form.module.scss';
+import { useFormSubmit } from '../../../hooks/useFormSubmit';
 
 const Form = () => {
-  const [payment, setPayment] = useState('');
+  const [payment, setPayment] = useState('money');
 
   const handleRadioClick = (e: React.ChangeEvent<HTMLInputElement>): void =>
     setPayment(e.target.value);
+  const isPaytmentSelected = (value: string): boolean => payment === value;
 
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={useFormSubmit}>
       <fieldset className={classes.form__billing}>
         <legend className='sub-title'>billing details</legend>
         <Input
@@ -79,6 +81,7 @@ const Form = () => {
           label='e-Money'
           value='money'
           radio
+          checked={isPaytmentSelected('money')}
           onChange={handleRadioClick}
         />
         <Input
@@ -89,6 +92,7 @@ const Form = () => {
           name='payment'
           value='cash'
           radio
+          checked={isPaytmentSelected('cash')}
           onChange={handleRadioClick}
         />
         {payment === 'money' ? (
@@ -110,7 +114,9 @@ const Form = () => {
           </>
         ) : (
           <div className={classes.cash}>
-            <CashIcon />
+            <div className={classes.cash__icon}>
+              <CashIcon />
+            </div>
             <p>
               The ‘Cash on Delivery’ option enables you to pay in cash when our
               delivery courier arrives at your residence. Just make sure your

@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../../app/hooks';
 import CartProducts from '../../../features/cart/CartProducts';
 import CartTotal from '../../../features/cart/CartTotal';
+import { useFormSubmit } from '../../../hooks/useFormSubmit';
 import Button from '../Button';
 import classes from './Summary.module.scss';
 
@@ -16,7 +17,12 @@ const CartCheckout = () => {
           cartTotal={cart.cartTotalAmount}
         />
         <CartTotal cartTotalAmount={cart.cartTotalAmount} summary />
-        <Button type='submit' name='continue&pay' className='btn-default-1'>
+        <Button
+          type='submit'
+          name='continue&pay'
+          className='btn-default-1'
+          onClick={useFormSubmit}
+        >
           continue & pay
         </Button>
       </div>

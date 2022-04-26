@@ -4,7 +4,7 @@
 
 .checkout {
   display: $d-grid;
-  grid-template-columns: 1fr 35rem;
+  grid-template-columns: 1fr;
   column-gap: $gap-base * 3;
   row-gap: $gap-base * 3.2;
   position: $p-relative;
@@ -19,5 +19,9 @@
   @include tablet {
     padding-top: $padding-base * 14;
     padding-bottom: $padding-base * 14;
+  }
+
+  @include laptop {
+    grid-template-columns: 1fr 35rem;
   }
 }

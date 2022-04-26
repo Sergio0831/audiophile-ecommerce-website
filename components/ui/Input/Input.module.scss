@@ -10,7 +10,6 @@
 
   display: $d-grid;
   row-gap: 9px;
-  letter-spacing: -0.214286px;
   text-transform: capitalize;
 }
 
@@ -28,8 +27,6 @@
     $font-weight: $fw-bold,
     $line-height: 1.9rem
   );
-
-  letter-spacing: -0.25px;
 
   &::placeholder {
     color: rgba($clr-black, 0.4);
@@ -57,6 +54,10 @@
   font-size: $fs-micro;
 
   input {
+    opacity: 0;
+    &:checked + span::after {
+      opacity: 1;
+    }
   }
 
   span {
@@ -76,6 +77,8 @@
       height: 1rem;
       border-radius: $radius-round;
       background-color: $clr-primary;
+      opacity: 0;
+      transition: opacity $transition;
     }
   }
 

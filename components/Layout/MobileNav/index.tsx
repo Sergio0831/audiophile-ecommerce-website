@@ -6,11 +6,13 @@ import Overlay from '../Overlay';
 import { useRef } from 'react';
 import { close } from '../../../features/mobileNav/mobileNavSlice';
 import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
+import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 
 const MobileNav = () => {
   const openNav = useAppSelector((state) => state.mobileNav.open);
   const navRef = useRef<HTMLElement>(null);
   const dispatch = useAppDispatch();
+  useLockBodyScroll();
 
   const mobileNavClasses = clsx({
     [classes.nav]: true,

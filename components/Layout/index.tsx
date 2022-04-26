@@ -1,5 +1,7 @@
-import { useAppSelector } from '../../app/hooks';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import Cart from '../../features/cart/Cart';
+import { cartTotal } from '../../features/cart/cartSlice';
 import Footer from './Footer';
 import Header from './Header';
 import MobileNav from './MobileNav';
@@ -9,14 +11,19 @@ type LayoutPops = {
 };
 
 const Layout = ({ children }: LayoutPops) => {
-  const cartOpen = useAppSelector((state) => state.cart.cartOpen);
   const navOpen = useAppSelector((state) => state.mobileNav.open);
+  const dispatch = useAppDispatch();
+  const cart = useAppSelector((state) => state.cart);
+
+  useEffect(() => {
+    dispatch(cartTotal());
+  }, [dispatch, cart]);
 
   return (
     <>
       <Header />
       {navOpen && <MobileNav />}
-      {cartOpen && <Cart />}
+      {cart.cartOpen && <Cart />}
       <main>{children}</main>
       <Footer />
     </>
