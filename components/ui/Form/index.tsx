@@ -1,18 +1,22 @@
-import { useState } from 'react';
 import Input from '../Input';
 import CashIcon from '../CashIcon';
 import classes from './Form.module.scss';
-import { useFormSubmit } from '../../../hooks/useFormSubmit';
+import useForm from '../../../hooks/useFormSubmit';
 
 const Form = () => {
-  const [payment, setPayment] = useState('money');
-
-  const handleRadioClick = (e: React.ChangeEvent<HTMLInputElement>): void =>
-    setPayment(e.target.value);
-  const isPaytmentSelected = (value: string): boolean => payment === value;
+  const {
+    handleSubmit,
+    handleRadioClick,
+    isPaymentSelected,
+    payment,
+    formData,
+    handleInputChange
+  } = useForm();
+  const { address, city, code, country, email, name, pin, number, phone } =
+    formData;
 
   return (
-    <form className={classes.form} onSubmit={useFormSubmit}>
+    <form className={classes.form} onSubmit={handleSubmit} id='checkoutForm'>
       <fieldset className={classes.form__billing}>
         <legend className='sub-title'>billing details</legend>
         <Input
@@ -21,6 +25,8 @@ const Form = () => {
           placeholder='Alexei Ward'
           name='name'
           label='name'
+          value={name}
+          onChange={handleInputChange}
         />
         <Input
           htmlFor='email'
@@ -29,6 +35,8 @@ const Form = () => {
           id='email'
           name='email'
           placeholder='alexei@mail.com'
+          value={email}
+          onChange={handleInputChange}
         />
         <Input
           label='phone number'
@@ -37,6 +45,8 @@ const Form = () => {
           id='tel'
           name='tel'
           placeholder='+1 202-555-0136'
+          value={phone}
+          onChange={handleInputChange}
         />
       </fieldset>
       <fieldset className={classes.form__shipping}>
@@ -47,6 +57,8 @@ const Form = () => {
           id='address'
           name='address'
           placeholder='1137 Williams Avenue'
+          value={address}
+          onChange={handleInputChange}
         />
         <Input
           label='ZIP code'
@@ -54,6 +66,8 @@ const Form = () => {
           placeholder='10001'
           id='code'
           name='code'
+          value={code}
+          onChange={handleInputChange}
         />
         <Input
           label='city'
@@ -61,6 +75,8 @@ const Form = () => {
           id='city'
           name='city'
           placeholder='Dublin'
+          value={city}
+          onChange={handleInputChange}
         />
         <Input
           label='country'
@@ -68,6 +84,8 @@ const Form = () => {
           id='country'
           name='country'
           placeholder='Ireland'
+          value={country}
+          onChange={handleInputChange}
         />
       </fieldset>
       <fieldset className={classes.form__payment}>
@@ -81,7 +99,7 @@ const Form = () => {
           label='e-Money'
           value='money'
           radio
-          checked={isPaytmentSelected('money')}
+          checked={isPaymentSelected('money')}
           onChange={handleRadioClick}
         />
         <Input
@@ -92,7 +110,7 @@ const Form = () => {
           name='payment'
           value='cash'
           radio
-          checked={isPaytmentSelected('cash')}
+          checked={isPaymentSelected('cash')}
           onChange={handleRadioClick}
         />
         {payment === 'money' ? (
@@ -103,6 +121,8 @@ const Form = () => {
               name='number'
               label='e-Money Number'
               placeholder='238521993'
+              value={number}
+              onChange={handleInputChange}
             />
             <Input
               label=' e-Money PIN'
@@ -110,6 +130,8 @@ const Form = () => {
               name='pin'
               htmlFor='pin'
               placeholder='5891'
+              value={pin}
+              onChange={handleInputChange}
             />
           </>
         ) : (

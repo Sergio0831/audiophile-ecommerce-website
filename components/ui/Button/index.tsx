@@ -6,6 +6,7 @@ type ButtonProps = {
   activeClassName?: string;
   link?: string;
   name?: string;
+  form?: string;
   children?: React.ReactNode;
   onClick?: (e: any) => void;
 };
@@ -16,7 +17,8 @@ const Button = ({
   link,
   children,
   onClick,
-  name
+  name,
+  form
 }: ButtonProps) => {
   if (link) {
     return (
@@ -29,7 +31,13 @@ const Button = ({
   }
 
   return (
-    <button type={type} name={name} className={className} onClick={onClick}>
+    <button
+      type={type}
+      name={name}
+      className={className}
+      onClick={onClick}
+      form={form}
+    >
       {children}
     </button>
   );
