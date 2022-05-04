@@ -1,4 +1,4 @@
-import Form from '../../ui/Form';
+import Form from '../Form';
 import classes from './CheckoutForm.module.scss';
 
 const CheckoutForm = () => {

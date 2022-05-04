@@ -2,15 +2,15 @@ import classes from './Overlay.module.scss';
 import clsx from 'clsx';
 
 type OverlayProps = {
-  showOverlay?: boolean;
   navOverlay?: boolean;
+  checkout?: boolean;
 };
 
-const Overlay = ({ navOverlay, showOverlay }: OverlayProps) => {
+const Overlay = ({ navOverlay, checkout }: OverlayProps) => {
   const overlayClasses = clsx({
     [classes.overlay]: true,
-    [classes.overlay__visible]: showOverlay,
-    [classes.overlay__nav]: navOverlay
+    [classes.overlay__nav]: navOverlay,
+    [classes.overlay__checkout]: checkout
   });
 
   return <div className={overlayClasses}></div>;

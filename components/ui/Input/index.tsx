@@ -12,6 +12,7 @@ type InputProps = {
   value?: string;
   checked?: boolean;
   radio?: boolean;
+  radioInput?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -26,6 +27,7 @@ const Input = ({
   value,
   checked,
   radio,
+  radioInput,
   onChange
 }: InputProps) => {
   const labelClasses = clsx(
@@ -37,14 +39,14 @@ const Input = ({
   );
   const inputClasses = clsx(
     {
-      [classes.input]: true
+      [classes.input]: true,
+      [classes.radioInput]: radioInput
     },
     className
   );
 
   return (
-    <label htmlFor={htmlFor} className={labelClasses}>
-      {label}
+    <>
       <input
         type={type ? type : 'text'}
         id={id}
@@ -54,9 +56,12 @@ const Input = ({
         value={value}
         checked={checked}
         onChange={onChange}
-      />
-      {radio && <span></span>}
-    </label>
+      />{' '}
+      <label htmlFor={htmlFor} className={labelClasses}>
+        {label}
+        {radio && <span></span>}
+      </label>
+    </>
   );
 };
 

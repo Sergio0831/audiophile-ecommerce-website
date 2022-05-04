@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import mobileNavReducer from '../features/mobileNav/mobileNavSlice';
 import cartReducer from '../features/cart/cartSlice';
+import checkoutModalReducer from '../features/checkout/checkoutModalSlice';
 
 export const store = configureStore({
   reducer: {
     mobileNav: mobileNavReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    modal: checkoutModalReducer
   }
 });
 

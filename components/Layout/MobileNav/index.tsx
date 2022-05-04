@@ -23,7 +23,7 @@ const MobileNav = () => {
 
   return (
     <>
-      {openNav && <Overlay navOverlay showOverlay={openNav ? true : false} />}
+      {openNav && <Overlay navOverlay />}
       <nav ref={navRef} className={mobileNavClasses}>
         <Categories />
       </nav>

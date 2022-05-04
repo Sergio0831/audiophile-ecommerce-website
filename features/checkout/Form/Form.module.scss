@@ -19,6 +19,12 @@
     color: $clr-primary;
   }
 
+  &__group {
+    @include flex($flex-direction: column-reverse);
+
+    row-gap: 9px;
+  }
+
   &__billing {
     grid-template-columns: 1fr;
 
@@ -34,7 +40,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    label {
+    .form__group {
       &:nth-child(2) {
         @include mobile {
           grid-column: 1 / 3;
@@ -58,7 +64,7 @@
       );
     }
 
-    label {
+    .form__group {
       &:nth-child(2) {
         @include mobile {
           grid-column: 1 / 2;

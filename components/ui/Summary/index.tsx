@@ -1,13 +1,11 @@
 import { useAppSelector } from '../../../app/hooks';
 import CartProducts from '../../../features/cart/CartProducts';
 import CartTotal from '../../../features/cart/CartTotal';
-import useForm from '../../../hooks/useFormSubmit';
 import Button from '../Button';
 import classes from './Summary.module.scss';
 
 const CartCheckout = () => {
   const cart = useAppSelector((state) => state.cart);
-  const { handleSubmit } = useForm();
 
   return (
     <aside className={classes.summary}>

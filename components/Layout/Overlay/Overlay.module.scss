@@ -9,18 +9,16 @@
 
   z-index: 5;
   background-color: rgba($clr-black, 0.4);
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
   transition: opacity $transition, visibility $transition;
-
-  &__visible {
-    opacity: 1;
-    visibility: visible;
-  }
 
   &__nav {
     @include tablet {
       display: none;
     }
+  }
+
+  &__checkout {
+    top: 0;
   }
 }

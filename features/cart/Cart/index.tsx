@@ -31,7 +31,7 @@ const Cart = () => {
 
   return (
     <>
-      {cartOpen && <Overlay showOverlay={cartOpen ? true : false} />}
+      {cartOpen && <Overlay />}
       <section className={`${classes.wrapper} section-center`}>
         <div className={cartClasses} ref={cartRef}>
           <div className={classes.cart__qty}>

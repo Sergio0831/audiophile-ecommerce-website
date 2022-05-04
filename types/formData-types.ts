@@ -6,5 +6,7 @@ export type FormDataTypes = {
   code: string;
   city: string;
   country: string;
-  paymentMethod: { number: string; pin: string };
+  paymentMethod: string;
+  eMoneyNumber?: string;
+  eMoneyPin?: string;
 };

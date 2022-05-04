@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import AmountButtons from '../../../components/ui/AmountButtons';
@@ -10,9 +11,10 @@ import classes from './CartProduct.module.scss';
 type CartProductProps = {
   product: ProductToCart;
   cart?: boolean;
+  checkoutProducts?: boolean;
 };
 
-const CartProduct = ({ product, cart }: CartProductProps) => {
+const CartProduct = ({ product, cart, checkoutProducts }: CartProductProps) => {
   const { id, image, name, price, quantity } = product;
   const dispatch = useAppDispatch();
 
@@ -24,9 +26,18 @@ const CartProduct = ({ product, cart }: CartProductProps) => {
     dispatch(decreaseQty(id));
   };
 
+  const productsClasses = clsx({
+    [classes.product]: true,
+    [classes.product__checkout]: checkoutProducts
+  });
+
   return (
-    <article className={classes.product}>
-      <Image width={64} height={64} src={image} />
+    <article className={productsClasses}>
+      <Image
+        width={checkoutProducts ? 50 : 64}
+        height={checkoutProducts ? 50 : 64}
+        src={image}
+      />
       <div className={classes.product__content}>
         <div>
           <p className={classes.product__name}>{shortName(name)}</p>
