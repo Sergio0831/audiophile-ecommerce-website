@@ -15,7 +15,9 @@ const Banner = () => {
     <section className={`${bannerClasses} section-center `}>
       <div className={classes.banner__text}>
         <h2 className='heading-2'>
-          bringing you the <span>best</span> audio gear
+          bringing you the
+          <br />
+          <span>best</span> audio gear
         </h2>
         <p>
           Located at the heart of New York City, Audiophile is the premier store

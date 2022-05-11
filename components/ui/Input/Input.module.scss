@@ -19,6 +19,7 @@
   caret-color: $clr-primary;
   transition: border-color $transition;
   outline: none;
+  cursor: pointer;
 
   @include font(
     $font-size: $fs-micro,

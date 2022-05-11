@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import { apolloClient } from '../client';
 import Banner from '../components/Sections/Banner';
 import Categories from '../components/Sections/Categories';
@@ -16,6 +17,13 @@ type CategoryProps = {
 const Category = ({ category, products }: CategoryProps) => {
   return (
     <>
+      <Head>
+        <title>{category}</title>
+        <meta
+          name='description'
+          content='Audiophile is an all in one stop to fulfill your audio needs.'
+        />
+      </Head>
       <CategoryHero title={category} />
       <CategoryProducts products={products} />
       <Categories />

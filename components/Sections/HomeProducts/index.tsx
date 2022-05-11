@@ -12,7 +12,9 @@ const HomeProducts = () => {
           />
         </div>
         <div className={classes.zx9__text}>
-          <h1 className='heading-1'>zx9 speaker</h1>
+          <h1 className='heading-1'>
+            zx9 <br /> speaker
+          </h1>
           <p>
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.

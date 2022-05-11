@@ -1,33 +1,45 @@
 import clsx from 'clsx';
+import { ChangeEvent } from 'react';
+import { Path, RegisterOptions, UseFormRegister } from 'react-hook-form';
+import { FormValues } from '../../../types/formData-types';
 import classes from './Input.module.scss';
 
 type InputProps = {
-  htmlFor: string;
+  htmlFor?: string;
+  inputName: Path<FormValues>;
   label: string;
+  register: UseFormRegister<FormValues>;
+  rules?: RegisterOptions;
   type?: string;
   id: string;
-  name: string;
+  name?: string;
   placeholder?: string;
-  className?: string;
+  inputClassName?: string;
+  labelClassName?: string;
   value?: string;
   checked?: boolean;
   radio?: boolean;
   radioInput?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  pattern?: { patternValue: string; message: string };
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input = ({
   htmlFor,
   label,
+  inputName,
   type,
   id,
   name,
   placeholder,
-  className,
+  inputClassName,
+  labelClassName,
   value,
   checked,
   radio,
   radioInput,
+  register,
+  rules,
   onChange
 }: InputProps) => {
   const labelClasses = clsx(
@@ -35,14 +47,14 @@ const Input = ({
       [classes.label]: true,
       [classes.radio]: radio
     },
-    className
+    labelClassName
   );
   const inputClasses = clsx(
     {
       [classes.input]: true,
       [classes.radioInput]: radioInput
     },
-    className
+    inputClassName
   );
 
   return (
@@ -50,11 +62,12 @@ const Input = ({
       <input
         type={type ? type : 'text'}
         id={id}
-        name={name}
+        value={value}
+        {...(register && register(inputName, rules))}
         placeholder={placeholder}
         className={inputClasses}
-        value={value}
         checked={checked}
+        name={name}
         onChange={onChange}
       />{' '}
       <label htmlFor={htmlFor} className={labelClasses}>

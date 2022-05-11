@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import { apolloClient } from '../../client';
 import Banner from '../../components/Sections/Banner';
 import Categories from '../../components/Sections/Categories';
@@ -18,6 +19,10 @@ const ProductDetailsPage = ({ product }: ProductDetailsPageProps) => {
 
   return (
     <>
+      <Head>
+        <title>{product.name}</title>
+        <meta name='description' content={product.description} />
+      </Head>
       <ProductDetails product={product} />
       <ProductDetailsFeatures features={features} includes={includes} />
       <ProductDetailsGallery gallery={gallery} />

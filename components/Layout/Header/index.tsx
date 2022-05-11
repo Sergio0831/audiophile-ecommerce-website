@@ -24,8 +24,10 @@ const Header = () => {
     <header className={headerClasses}>
       <div className={`section-center ${classes.header__container}`}>
         <MenuBtn />
-        <Logo />
-        <Navbar />
+        <div className={classes.header__logo}>
+          <Logo />
+        </div>
+        <Navbar className={classes.header__nav} />
         <Button
           name='cart'
           className={classes.cart}

@@ -1,217 +1,338 @@
 import classes from './Form.module.scss';
-import { useState } from 'react';
-import { FormDataTypes } from '../../../types/formData-types';
-import Input from '../../../components/ui/Input';
 import CashIcon from '../../../components/ui/CashIcon';
+import { useForm } from 'react-hook-form';
+import { FormValues } from '../../../types/formData-types';
 import { useAppDispatch } from '../../../app/hooks';
 import { modalOpen } from '../checkoutModalSlice';
+import { useState } from 'react';
 
 const Form = () => {
-  const [payment, setPayment] = useState<string>('money');
-  const [formData, setFormData] = useState<FormDataTypes>({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    code: '',
-    city: '',
-    country: '',
-    paymentMethod: '',
-    eMoneyNumber: '',
-    eMoneyPin: ''
-  });
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset
+  } = useForm<FormValues>({ mode: 'all' });
+  const [method, setMethod] = useState('eMoney');
+
   const dispatch = useAppDispatch();
 
-  const {
-    address,
-    city,
-    code,
-    country,
-    email,
-    name,
-    phone,
-    eMoneyNumber,
-    eMoneyPin,
-    paymentMethod
-  } = formData;
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+    reset();
     dispatch(modalOpen());
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      code: '',
-      city: '',
-      country: '',
-      paymentMethod: '',
-      eMoneyNumber: '',
-      eMoneyPin: ''
-    });
   };
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit} id='checkoutForm'>
+    <form
+      noValidate
+      className={classes.form}
+      onSubmit={handleSubmit(onSubmit)}
+      id='checkoutForm'
+    >
       <fieldset className={classes.form__billing}>
         <legend className='sub-title'>billing details</legend>
         <div className={classes.form__group}>
-          <Input
-            htmlFor='name'
+          <input
+            type='text'
             id='name'
+            {...register('name', {
+              required: 'Required',
+              pattern: {
+                value: /^[a-zA-Z0-9_ ]+$/,
+                message: 'Wrong format'
+              }
+            })}
             placeholder='Alexei Ward'
-            name='name'
-            label='name'
-            value={name}
-            onChange={handleInputChange}
+            className={`${errors?.name && classes.form__inputError} ${
+              classes.form__input
+            }`}
           />
+          <label
+            htmlFor='name'
+            className={`${errors?.name && classes.form__labelError} ${
+              classes.form__label
+            }`}
+          >
+            Name
+          </label>
+          {errors?.name && (
+            <p className={classes.form__error}>{errors?.name.message}</p>
+          )}
         </div>
         <div className={classes.form__group}>
-          <Input
-            htmlFor='email'
-            label='email address'
+          <input
             type='email'
             id='email'
-            name='email'
+            {...register('email', {
+              required: 'Required',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Wrong format'
+              }
+            })}
             placeholder='alexei@mail.com'
-            value={email}
-            onChange={handleInputChange}
+            className={`${errors?.email && classes.form__inputError} ${
+              classes.form__input
+            }`}
           />
+          <label
+            htmlFor='email'
+            className={`${errors?.email && classes.form__labelError} ${
+              classes.form__label
+            }`}
+          >
+            Email Address
+          </label>
+          {errors?.email && (
+            <p className={classes.form__error}>{errors?.email.message}</p>
+          )}
         </div>
         <div className={classes.form__group}>
-          <Input
-            label='phone number'
-            htmlFor='phone'
+          <input
             type='tel'
             id='phone'
-            name='phone'
-            placeholder='+1 202-555-0136'
-            value={phone}
-            onChange={handleInputChange}
+            {...register('phone', {
+              required: 'Required',
+              pattern: {
+                value:
+                  /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+                message: 'Wrong format'
+              }
+            })}
+            placeholder='+1202-555-0136'
+            className={`${errors?.phone && classes.form__inputError} ${
+              classes.form__input
+            }`}
           />
+          <label
+            htmlFor='phone'
+            className={`${errors?.phone && classes.form__labelError} ${
+              classes.form__label
+            }`}
+          >
+            Phone Number
+          </label>
+          {errors?.phone && (
+            <p className={classes.form__error}>{errors?.phone.message}</p>
+          )}
         </div>
       </fieldset>
       <fieldset className={classes.form__shipping}>
         <legend className='sub-title'>shipping info</legend>
         <div className={classes.form__group}>
-          <Input
-            label='address'
-            htmlFor='address'
+          <input
+            type='text'
             id='address'
-            name='address'
+            {...register('address', {
+              required: 'Required',
+              pattern: {
+                value: /\d+/,
+                message: 'Wrong format'
+              }
+            })}
             placeholder='1137 Williams Avenue'
-            value={address}
-            onChange={handleInputChange}
+            className={`${errors?.address && classes.form__inputError} ${
+              classes.form__input
+            }`}
           />
+          <label
+            htmlFor='address'
+            className={`${errors?.address && classes.form__labelError} ${
+              classes.form__label
+            }`}
+          >
+            Address
+          </label>
+          {errors?.address && (
+            <p className={classes.form__error}>{errors?.address.message}</p>
+          )}
         </div>
         <div className={classes.form__group}>
-          <Input
-            label='ZIP code'
-            htmlFor='code'
-            placeholder='10001'
+          <input
+            type='text'
             id='code'
-            name='code'
-            value={code}
-            onChange={handleInputChange}
+            {...register('code', {
+              required: 'Required',
+              pattern: {
+                value: /\d+/,
+                message: 'Wrong format'
+              }
+            })}
+            placeholder='10001'
+            className={`${errors?.code && classes.form__inputError} ${
+              classes.form__input
+            }`}
           />
+          <label
+            htmlFor='code'
+            className={`${errors?.code && classes.form__labelError} ${
+              classes.form__label
+            }`}
+          >
+            ZIP Code
+          </label>
+          {errors?.code && (
+            <p className={classes.form__error}>{errors?.code.message}</p>
+          )}
         </div>
         <div className={classes.form__group}>
-          <Input
-            label='city'
-            htmlFor='city'
+          <input
+            type='text'
             id='city'
-            name='city'
+            {...register('city', {
+              required: 'Required',
+              pattern: {
+                value: /^[A-Za-z]+$/,
+                message: 'Wrong format'
+              }
+            })}
             placeholder='Dublin'
-            value={city}
-            onChange={handleInputChange}
+            className={`${errors?.city && classes.form__inputError} ${
+              classes.form__input
+            }`}
           />
+          <label
+            htmlFor='city'
+            className={`${errors?.city && classes.form__labelError} ${
+              classes.form__label
+            }`}
+          >
+            City
+          </label>
+          {errors?.city && (
+            <p className={classes.form__error}>{errors?.city.message}</p>
+          )}
         </div>
         <div className={classes.form__group}>
-          <Input
-            label='country'
-            htmlFor='country'
+          <input
+            type='text'
             id='country'
-            name='country'
-            placeholder='Ireland'
-            value={country}
-            onChange={handleInputChange}
+            {...register('country', {
+              required: 'Required',
+              pattern: {
+                value: /^[A-Za-z]+$/,
+                message: 'Wrong format'
+              }
+            })}
+            placeholder='Dublin'
+            className={`${errors?.country && classes.form__inputError} ${
+              classes.form__input
+            }`}
           />
+          <label
+            htmlFor='country'
+            className={`${errors?.country && classes.form__labelError} ${
+              classes.form__label
+            }`}
+          >
+            Country
+          </label>
+          {errors?.country && (
+            <p className={classes.form__error}> {errors?.country.message}</p>
+          )}
         </div>
       </fieldset>
       <fieldset className={classes.form__payment}>
         <legend className='sub-title'>payment details</legend>
         <h6>Payment Method</h6>
         <div className={classes.form__group}>
-          <Input
-            htmlFor='money'
+          <input
             type='radio'
             id='money'
-            name='paymentMethod'
-            label='e-Money'
-            value='money'
-            radio
-            radioInput
-            checked={payment === 'money'}
-            onChange={(e) => {
-              setPayment(e.target.value);
-              setFormData({
-                ...formData,
-                paymentMethod: e.target.value
-              });
-            }}
+            value='eMoney'
+            checked={method === 'eMoney'}
+            {...register('paymentMetod')}
+            className={` ${classes.form__input}  ${classes.form__radioInput}`}
+            onChange={(e) => setMethod(e.target.value)}
           />
+          <label
+            htmlFor='money'
+            className={` ${classes.form__label}  ${classes.form__radio}`}
+          >
+            e-Money
+            <span></span>
+          </label>
         </div>
         <div className={classes.form__group}>
-          <Input
-            label='Cash on Delivery'
-            htmlFor='cash'
+          <input
             type='radio'
             id='cash'
-            name='paymentMethod'
             value='cash'
-            radio
-            radioInput
-            checked={payment === 'cash'}
-            onChange={(e) => {
-              setPayment(e.target.value);
-              setFormData({
-                ...formData,
-                paymentMethod: e.target.value
-              });
-            }}
+            checked={method === 'cash'}
+            {...register('paymentMetod')}
+            className={` ${classes.form__input}  ${classes.form__radioInput}`}
+            onChange={(e) => setMethod(e.target.value)}
           />
+          <label
+            htmlFor='cash'
+            className={` ${classes.form__label}  ${classes.form__radio}`}
+          >
+            Cash
+            <span></span>
+          </label>
         </div>
-        {payment === 'money' ? (
+        {method === 'eMoney' ? (
           <>
             <div className={classes.form__group}>
-              <Input
-                htmlFor='number'
-                id='number'
-                name='eMoneyNumber'
-                label='e-Money Number'
+              <input
+                type='text'
+                id='eMoneyNumber'
+                {...register('eMoneyNumber', {
+                  required: 'Required',
+                  pattern: {
+                    value: /\d+/,
+                    message: 'Wrong format'
+                  }
+                })}
                 placeholder='238521993'
-                value={eMoneyNumber}
-                onChange={handleInputChange}
+                className={`${
+                  errors?.eMoneyNumber && classes.form__inputError
+                } ${classes.form__input}`}
               />
+              <label
+                htmlFor='eMoneyNumber'
+                className={`${
+                  errors?.eMoneyNumber && classes.form__labelError
+                } ${classes.form__label}`}
+              >
+                e-Money Number
+              </label>
+              {errors?.eMoneyNumber && (
+                <p className={classes.form__error}>
+                  {errors?.eMoneyNumber.message}
+                </p>
+              )}
             </div>
             <div className={classes.form__group}>
-              <Input
-                label=' e-Money PIN'
-                id='pin'
-                name='eMoneyPin'
-                htmlFor='pin'
-                placeholder='5891'
-                value={eMoneyPin}
-                onChange={handleInputChange}
+              <input
+                type='text'
+                id='eMoneyPin'
+                {...register('eMoneyPin', {
+                  required: 'Required',
+                  pattern: {
+                    value: /\d+/,
+                    message: 'Wrong format'
+                  }
+                })}
+                placeholder='6891'
+                className={`${errors?.eMoneyPin && classes.form__inputError} ${
+                  classes.form__input
+                }`}
               />
+              <label
+                htmlFor='eMoneyPin'
+                className={`${errors?.eMoneyPin && classes.form__labelError} ${
+                  classes.form__label
+                }`}
+              >
+                e-Money Number
+              </label>
+              {errors?.eMoneyPin && (
+                <p className={classes.form__error}>
+                  {errors?.eMoneyPin.message}
+                </p>
+              )}
             </div>
           </>
         ) : (
