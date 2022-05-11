@@ -10,7 +10,7 @@ export const categoriesDb: CategoriesTypes = {
   categories
 };
 
-export const context = {
+export const Context = {
   productsDb,
   categoriesDb
 };
