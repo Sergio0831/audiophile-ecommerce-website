@@ -27,7 +27,7 @@ const Categories = ({ className }: CategoriesProps) => {
   return (
     <section className={categoriesClasses}>
       {data.categories.map((cat: CategoryTypes) => (
-        <Category key={cat.category} category={cat} />
+        <Category key={cat.name} category={cat} />
       ))}
     </section>
   );

@@ -3,23 +3,23 @@ import { gql } from '@apollo/client';
 export const GET_CATEGORIES = gql`
   query Categories {
     categories {
-      category
+      name
       image
     }
   }
 `;
 
 export const GET_CATEGORY = gql`
-  query Category($categoryName: String!) {
-    category(categoryName: $categoryName) {
-      category
+  query Category($name: String!) {
+    category(name: $name) {
+      name
       products {
         id
         name
         new
         slug
         description
-        category
+        categoryName
         categoryImage {
           desktop
           tablet

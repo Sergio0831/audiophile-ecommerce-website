@@ -7,24 +7,26 @@ import CategoryProducts from '../components/Sections/CategoryProducts';
 import CategoryHero from '../components/ui/CategoryHero';
 import { GET_CATEGORIES, GET_CATEGORY } from '../graphql/queries';
 import { CategoryTypes } from '../types/category-type';
-import { CategoryProductTypes } from '../types/categoryProducts-types';
+import { TCategoryProducts } from '../types/categoryProducts-types';
 
 type CategoryProps = {
-  category: string;
-  products: CategoryProductTypes[];
+  category: TCategoryProducts;
 };
 
-const Category = ({ category, products }: CategoryProps) => {
+const Category = ({ category }: CategoryProps) => {
+  console.log(category);
+  const { name, products } = category;
+
   return (
     <>
       <Head>
-        <title>{category}</title>
+        <title>{name}</title>
         <meta
           name='description'
           content='Audiophile is an all in one stop to fulfill your audio needs.'
         />
       </Head>
-      <CategoryHero title={category} />
+      <CategoryHero title={name} />
       <CategoryProducts products={products} />
       <Categories />
       <Banner />
@@ -39,13 +41,13 @@ export const getStaticProps: GetStaticProps = async ({
 }: any) => {
   const { data } = await apolloClient.query({
     query: GET_CATEGORY,
-    variables: { categoryName: category }
+    variables: { name: category }
   });
+  console.log(data);
 
   return {
     props: {
-      category: data?.category.category,
-      products: data?.category.products
+      category: data?.category
     }
   };
 };
@@ -58,7 +60,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: data?.categories.map((cat: CategoryTypes) => {
       return {
-        params: { category: cat.category }
+        params: { category: cat.name }
       };
     }),
     fallback: false

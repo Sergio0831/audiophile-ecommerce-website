@@ -1,14 +1,6 @@
+import { Category } from './Category';
 import { extendType, nonNull, objectType, stringArg } from 'nexus';
 import { ProductType } from '../../types/product-types';
-
-const Gallery = objectType({
-  name: 'Gallery',
-  definition(t) {
-    t.field('first', { type: Image });
-    t.field('second', { type: Image });
-    t.field('third', { type: Image });
-  }
-});
 
 const Image = objectType({
   name: 'Image',
@@ -16,6 +8,15 @@ const Image = objectType({
     t.string('mobile');
     t.string('tablet');
     t.string('desktop');
+  }
+});
+
+const Gallery = objectType({
+  name: 'Gallery',
+  definition(t) {
+    t.field('first', { type: Image });
+    t.field('second', { type: Image });
+    t.field('third', { type: Image });
   }
 });
 
@@ -40,11 +41,11 @@ const Others = objectType({
 export const Product = objectType({
   name: 'Product',
   definition(t) {
-    t.nonNull.int('id');
+    t.nonNull.string('id');
     t.nonNull.string('slug');
     t.nonNull.string('name');
+    t.nonNull.string('categoryName');
     t.nonNull.field('image', { type: Image });
-    t.nonNull.string('category');
     t.nonNull.field('categoryImage', { type: Image });
     t.nonNull.boolean('new');
     t.nonNull.int('price');
@@ -52,7 +53,16 @@ export const Product = objectType({
     t.nonNull.string('features');
     t.nonNull.list.field('includes', { type: Includes });
     t.nonNull.field('gallery', { type: Gallery });
-    t.nonNull.list.field('others', { type: Others });
+    t.field('category', {
+      type: 'Category',
+      resolve(parent, _args, ctx) {
+        return ctx.prisma.category.findUnique({
+          where: {
+            name: parent.categoryName
+          }
+        });
+      }
+    });
   }
 });
 
@@ -61,8 +71,8 @@ export const ProductsQuery = extendType({
   definition(t) {
     t.nonNull.list.field('products', {
       type: 'Product',
-      resolve(parent, args, ctx) {
-        return ctx.productsDb.products;
+      resolve(_parent, _args, ctx) {
+        return ctx.prisma.product.findMany();
       }
     });
   }
@@ -76,10 +86,14 @@ export const ProductQuery = extendType({
       args: {
         slug: nonNull(stringArg())
       },
-      resolve(parent, { slug }, ctx) {
-        return ctx.productsDb.products.find(
-          (product: ProductType) => product.slug === slug
-        );
+      async resolve(_parent, args, ctx) {
+        const product = ctx.prisma.product.findUnique({
+          where: {
+            slug: args.slug
+          }
+        });
+
+        return product;
       }
     });
   }

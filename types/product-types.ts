@@ -27,7 +27,7 @@ export type ProductType = {
   slug: string;
   name: string;
   image: Image;
-  category: string;
+  categoryName: string;
   categoryImage: Image;
   new: boolean;
   price: number;

@@ -1,6 +1,5 @@
 export const products = [
   {
-    id: 1,
     slug: 'yx1-earphones',
     name: 'YX1 Wireless Earphones',
     image: {
@@ -8,7 +7,7 @@ export const products = [
       tablet: '/assets/product-yx1-earphones/tablet/image-product.webp',
       desktop: '/assets/product-yx1-earphones/desktop/image-product.webp'
     },
-    category: 'earphones',
+    categoryName: 'earphones',
     categoryImage: {
       mobile:
         '/assets/product-yx1-earphones/mobile/image-category-page-preview.webp',
@@ -66,7 +65,7 @@ export const products = [
       {
         slug: 'xx99-mark-one-headphones',
         name: 'XX99 Mark I',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx99-mark-one-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx99-mark-one-headphones.webp',
@@ -76,7 +75,7 @@ export const products = [
       {
         slug: 'xx59-headphones',
         name: 'XX59',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx59-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx59-headphones.webp',
@@ -86,7 +85,7 @@ export const products = [
       {
         slug: 'zx9-speaker',
         name: 'ZX9 Speaker',
-        category: 'speaker',
+        categoryName: 'speaker',
         image: {
           mobile: '/assets/shared/mobile/image-zx9-speaker.webp',
           tablet: '/assets/shared/tablet/image-zx9-speaker.webp',
@@ -96,7 +95,6 @@ export const products = [
     ]
   },
   {
-    id: 2,
     slug: 'xx59-headphones',
     name: 'XX59 Headphones',
     image: {
@@ -104,7 +102,7 @@ export const products = [
       tablet: '/assets/product-xx59-headphones/tablet/image-product.webp',
       desktop: '/assets/product-xx59-headphones/desktop/image-product.webp'
     },
-    category: 'headphones',
+    categoryName: 'headphones',
     categoryImage: {
       mobile:
         '/assets/product-xx59-headphones/mobile/image-category-page-preview.webp',
@@ -158,7 +156,7 @@ export const products = [
       {
         slug: 'xx99-mark-two-headphones',
         name: 'XX99 Mark II',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx99-mark-two-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx99-mark-two-headphones.webp',
@@ -168,7 +166,7 @@ export const products = [
       {
         slug: 'xx99-mark-one-headphones',
         name: 'XX99 Mark I',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx99-mark-one-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx99-mark-one-headphones.webp',
@@ -178,7 +176,7 @@ export const products = [
       {
         slug: 'zx9-speaker',
         name: 'ZX9 Speaker',
-        category: 'speaker',
+        categoryName: 'speaker',
         image: {
           mobile: '/assets/shared/mobile/image-zx9-speaker.webp',
           tablet: '/assets/shared/tablet/image-zx9-speaker.webp',
@@ -188,7 +186,6 @@ export const products = [
     ]
   },
   {
-    id: 3,
     slug: 'xx99-mark-one-headphones',
     name: 'XX99 Mark I Headphones',
     image: {
@@ -199,7 +196,7 @@ export const products = [
       desktop:
         '/assets/product-xx99-mark-one-headphones/desktop/image-product.webp'
     },
-    category: 'headphones',
+    categoryName: 'headphones',
     categoryImage: {
       mobile:
         '/assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.webp',
@@ -262,7 +259,7 @@ export const products = [
       {
         slug: 'xx99-mark-two-headphones',
         name: 'XX99 Mark II',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx99-mark-two-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx99-mark-two-headphones.webp',
@@ -272,7 +269,7 @@ export const products = [
       {
         slug: 'xx59-headphones',
         name: 'XX59',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx59-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx59-headphones.webp',
@@ -282,7 +279,7 @@ export const products = [
       {
         slug: 'zx9-speaker',
         name: 'ZX9 Speaker',
-        category: 'speaker',
+        categoryName: 'speaker',
         image: {
           mobile: '/assets/shared/mobile/image-zx9-speaker.webp',
           tablet: '/assets/shared/tablet/image-zx9-speaker.webp',
@@ -292,7 +289,6 @@ export const products = [
     ]
   },
   {
-    id: 4,
     slug: 'xx99-mark-two-headphones',
     name: 'XX99 Mark II Headphones',
     image: {
@@ -303,7 +299,7 @@ export const products = [
       desktop:
         '/assets/product-xx99-mark-two-headphones/desktop/image-product.webp'
     },
-    category: 'headphones',
+    categoryName: 'headphones',
     categoryImage: {
       mobile:
         '/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.webp',
@@ -370,7 +366,7 @@ export const products = [
       {
         slug: 'xx99-mark-one-headphones',
         name: 'XX99 Mark I',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx99-mark-one-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx99-mark-one-headphones.webp',
@@ -380,7 +376,7 @@ export const products = [
       {
         slug: 'xx59-headphones',
         name: 'XX59',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx59-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx59-headphones.webp',
@@ -390,7 +386,7 @@ export const products = [
       {
         slug: 'zx9-speaker',
         name: 'ZX9 Speaker',
-        category: 'speaker',
+        categoryName: 'speaker',
         image: {
           mobile: '/assets/shared/mobile/image-zx9-speaker.webp',
           tablet: '/assets/shared/tablet/image-zx9-speaker.webp',
@@ -400,7 +396,6 @@ export const products = [
     ]
   },
   {
-    id: 5,
     slug: 'zx7-speaker',
     name: 'ZX7 Speaker',
     image: {
@@ -408,7 +403,7 @@ export const products = [
       tablet: '/assets/product-zx7-speaker/tablet/image-product.webp',
       desktop: '/assets/product-zx7-speaker/desktop/image-product.webp'
     },
-    category: 'speakers',
+    categoryName: 'speakers',
     categoryImage: {
       mobile:
         '/assets/product-zx7-speaker/mobile/image-category-page-preview.webp',
@@ -466,7 +461,7 @@ export const products = [
       {
         slug: 'zx9-speaker',
         name: 'ZX9 Speaker',
-        category: 'speaker',
+        categoryName: 'speaker',
         image: {
           mobile: '/assets/shared/mobile/image-zx9-speaker.webp',
           tablet: '/assets/shared/tablet/image-zx9-speaker.webp',
@@ -476,7 +471,7 @@ export const products = [
       {
         slug: 'xx99-mark-one-headphones',
         name: 'XX99 Mark I',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx99-mark-one-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx99-mark-one-headphones.webp',
@@ -486,7 +481,7 @@ export const products = [
       {
         slug: 'xx59-headphones',
         name: 'XX59',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx59-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx59-headphones.webp',
@@ -496,7 +491,6 @@ export const products = [
     ]
   },
   {
-    id: 6,
     slug: 'zx9-speaker',
     name: 'ZX9 Speaker',
     image: {
@@ -504,7 +498,7 @@ export const products = [
       tablet: '/assets/product-zx9-speaker/tablet/image-product.webp',
       desktop: '/assets/product-zx9-speaker/desktop/image-product.webp'
     },
-    category: 'speakers',
+    categoryName: 'speakers',
     categoryImage: {
       mobile:
         '/assets/product-zx9-speaker/mobile/image-category-page-preview.webp',
@@ -562,7 +556,7 @@ export const products = [
       {
         slug: 'zx7-speaker',
         name: 'ZX7 Speaker',
-        category: 'speaker',
+        categoryName: 'speaker',
         image: {
           mobile: '/assets/shared/mobile/image-zx7-speaker.webp',
           tablet: '/assets/shared/tablet/image-zx7-speaker.webp',
@@ -572,7 +566,7 @@ export const products = [
       {
         slug: 'xx99-mark-one-headphones',
         name: 'XX99 Mark I',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx99-mark-one-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx99-mark-one-headphones.webp',
@@ -582,7 +576,7 @@ export const products = [
       {
         slug: 'xx59-headphones',
         name: 'XX59',
-        category: 'headphones',
+        categoryName: 'headphones',
         image: {
           mobile: '/assets/shared/mobile/image-xx59-headphones.webp',
           tablet: '/assets/shared/tablet/image-xx59-headphones.webp',
@@ -593,17 +587,32 @@ export const products = [
   }
 ];
 
+// export const categories = [
+//   {
+//     category: 'headphones',
+//     image: '/assets/shared/desktop/headphones-category.png'
+//   },
+//   {
+//     category: 'speakers',
+//     image: '/assets/shared/desktop/speakers-category.png'
+//   },
+//   {
+//     category: 'earphones',
+//     image: '/assets/shared/desktop/earphones-category.png'
+//   }
+// ];
+
 export const categories = [
   {
-    category: 'headphones',
+    name: 'headphones',
     image: '/assets/shared/desktop/headphones-category.png'
   },
   {
-    category: 'speakers',
+    name: 'speakers',
     image: '/assets/shared/desktop/speakers-category.png'
   },
   {
-    category: 'earphones',
+    name: 'earphones',
     image: '/assets/shared/desktop/earphones-category.png'
   }
 ];

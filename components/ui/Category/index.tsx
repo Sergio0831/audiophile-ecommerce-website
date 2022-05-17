@@ -14,21 +14,21 @@ const Category = ({ category }: CategoryProps) => {
 
   return (
     <Button
-      link={`/${category.category}`}
+      link={`/${category.name}`}
       className={classes.category}
       onClick={() => dispatch(close())}
     >
       <div className={classes.category__image}>
         <Image
-          desktopWebp={`/assets/shared/desktop/${category.category}.webp`}
-          tabletWebp={`/assets/shared/tablet/${category.category}.webp`}
-          mobileWebp={`/assets/shared/mobile/${category.category}.webp`}
+          desktopWebp={`/assets/shared/desktop/${category.name}.webp`}
+          tabletWebp={`/assets/shared/tablet/${category.name}.webp`}
+          mobileWebp={`/assets/shared/mobile/${category.name}.webp`}
           imageClasses=''
-          alt={category.category}
+          alt={category.name}
         />
       </div>
       <div className={classes.category__text}>
-        <h6 className='heading-6'>{category.category}</h6>
+        <h6 className='heading-6'>{category.name}</h6>
         <span className='btn-default-3'>Shop</span>
       </div>
     </Button>

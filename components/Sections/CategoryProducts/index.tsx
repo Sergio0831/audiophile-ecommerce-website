@@ -1,9 +1,9 @@
-import { CategoryProductTypes } from '../../../types/categoryProducts-types';
+import { TCategoryProduct } from '../../../types/categoryProducts-types';
 import CategoryProduct from '../../ui/CategoryProduct';
 import classes from './CategoryProducts.module.scss';
 
 type CategoryProductsProps = {
-  products: CategoryProductTypes[];
+  products: TCategoryProduct[];
 };
 
 const CategoryProducts = ({ products }: CategoryProductsProps) => {

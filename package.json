@@ -9,8 +9,12 @@
     "lint": "next lint",
     "generate": "ts-node --transpile-only --compiler-options {\"module\":\"CommonJS\"} graphql/schema"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"commonjs\"} prisma/seed.ts"
+  },
   "dependencies": {
     "@apollo/client": "^3.5.10",
+    "@prisma/client": "^3.14.0",
     "@reduxjs/toolkit": "^1.8.1",
     "@types/react-redux": "^7.1.24",
     "apollo-server-micro": "^3.6.3",
@@ -21,6 +25,7 @@
     "micro-cors": "^0.1.1",
     "next": "12.1.0",
     "nexus": "1.1.0",
+    "prisma": "^3.14.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.30.0",

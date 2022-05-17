@@ -1,11 +1,11 @@
 import React from 'react';
-import { CategoryProductTypes } from '../../../types/categoryProducts-types';
+import { TCategoryProduct } from '../../../types/categoryProducts-types';
 import Button from '../Button';
 import Image from '../Image';
 import classes from './CategoryProduct.module.scss';
 
 type CategoryProductProps = {
-  product: CategoryProductTypes;
+  product: TCategoryProduct;
 };
 
 const CategoryProduct = ({ product }: CategoryProductProps) => {
@@ -13,7 +13,7 @@ const CategoryProduct = ({ product }: CategoryProductProps) => {
     name,
     new: newProduct,
     description,
-    category,
+    categoryName,
     slug,
     categoryImage
   } = product;
@@ -34,7 +34,7 @@ const CategoryProduct = ({ product }: CategoryProductProps) => {
         {newProduct ? <span className='overline'>new product</span> : null}
         <h2 className='heading-2'>{name}</h2>
         <p>{description}</p>
-        <Button className='btn-default-1' link={`/${category}/${slug}`}>
+        <Button className='btn-default-1' link={`/${categoryName}/${slug}`}>
           see product
         </Button>
       </div>

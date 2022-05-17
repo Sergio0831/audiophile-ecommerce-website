@@ -1,16 +1,10 @@
-import { categories, products } from '../db/data';
-import { CategoriesTypes } from '../types/category-type';
-import { Products } from '../types/product-types';
+import { PrismaClient } from '@prisma/client';
+import prisma from '../prisma/prisma';
 
-export const productsDb: Products = {
-  products
+export type Context = {
+  prisma: PrismaClient;
 };
 
-export const categoriesDb: CategoriesTypes = {
-  categories
-};
-
-export const context = {
-  productsDb,
-  categoriesDb
+export const context: Context = {
+  prisma
 };
