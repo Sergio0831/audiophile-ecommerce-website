@@ -587,21 +587,6 @@ export const products = [
   }
 ];
 
-// export const categories = [
-//   {
-//     category: 'headphones',
-//     image: '/assets/shared/desktop/headphones-category.png'
-//   },
-//   {
-//     category: 'speakers',
-//     image: '/assets/shared/desktop/speakers-category.png'
-//   },
-//   {
-//     category: 'earphones',
-//     image: '/assets/shared/desktop/earphones-category.png'
-//   }
-// ];
-
 export const categories = [
   {
     name: 'headphones',

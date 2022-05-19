@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import Overlay from '../../../components/Layout/Overlay';
 import Button from '../../../components/ui/Button';
-import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
 import CartProducts from '../CartProducts';
 import { clearCart, closeCart } from '../cartSlice';

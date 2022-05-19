@@ -6,7 +6,7 @@ import Categories from '../components/Sections/Categories';
 import CategoryProducts from '../components/Sections/CategoryProducts';
 import CategoryHero from '../components/ui/CategoryHero';
 import { GET_CATEGORIES, GET_CATEGORY } from '../graphql/queries';
-import { CategoryTypes } from '../types/category-type';
+import { TCategory } from '../types/category-type';
 import { TCategoryProducts } from '../types/categoryProducts-types';
 
 type CategoryProps = {
@@ -14,7 +14,6 @@ type CategoryProps = {
 };
 
 const Category = ({ category }: CategoryProps) => {
-  console.log(category);
   const { name, products } = category;
 
   return (
@@ -43,7 +42,6 @@ export const getStaticProps: GetStaticProps = async ({
     query: GET_CATEGORY,
     variables: { name: category }
   });
-  console.log(data);
 
   return {
     props: {
@@ -58,7 +56,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   });
 
   return {
-    paths: data?.categories.map((cat: CategoryTypes) => {
+    paths: data?.categories.map((cat: TCategory) => {
       return {
         params: { category: cat.name }
       };

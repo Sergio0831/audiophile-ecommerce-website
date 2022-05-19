@@ -1,8 +1,9 @@
-export type CategoryTypes = {
+export type TCategory = {
+  id: string;
   name: string;
   image: string;
 };
 
-export type CategoriesTypes = {
-  categories: CategoryTypes[];
+export type TCategories = {
+  categories: TCategory[];
 };

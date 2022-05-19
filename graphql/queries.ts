@@ -34,7 +34,7 @@ export const GET_PRODUCTS = gql`
   query Products {
     products {
       slug
-      category
+      categoryName
     }
   }
 `;
@@ -50,7 +50,7 @@ export const GET_PRODUCT = gql`
         tablet
         mobile
       }
-      category
+      categoryName
       new
       price
       description
@@ -79,7 +79,7 @@ export const GET_PRODUCT = gql`
       others {
         name
         slug
-        category
+        categoryName
         image {
           desktop
           tablet

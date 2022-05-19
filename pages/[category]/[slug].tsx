@@ -8,14 +8,15 @@ import ProductDetailsFeatures from '../../components/Sections/ProductDetailsFeat
 import ProductDetailsGallery from '../../components/Sections/ProductDetailsGallery';
 import ProductDetailsOthers from '../../components/Sections/ProductDetailsOthers';
 import { GET_PRODUCT, GET_PRODUCTS } from '../../graphql/queries';
-import { ProductType } from '../../types/product-types';
+import { TProduct } from '../../types/product-types';
 
 type ProductDetailsPageProps = {
-  product: ProductType;
+  product: TProduct;
 };
 
 const ProductDetailsPage = ({ product }: ProductDetailsPageProps) => {
   const { features, includes, gallery, others } = product;
+  console.log(product);
 
   return (
     <>
@@ -56,9 +57,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   });
 
   return {
-    paths: data?.products.map((product: ProductType) => {
+    paths: data?.products.map((product: TProduct) => {
       return {
-        params: { category: product.category, slug: product.slug }
+        params: { category: product.categoryName, slug: product.slug }
       };
     }),
     fallback: false

@@ -1,6 +1,4 @@
-import { Category } from './Category';
 import { extendType, nonNull, objectType, stringArg } from 'nexus';
-import { ProductType } from '../../types/product-types';
 
 const Image = objectType({
   name: 'Image',
@@ -33,7 +31,7 @@ const Others = objectType({
   definition(t) {
     t.string('slug');
     t.string('name');
-    t.string('category');
+    t.string('categoryName');
     t.field('image', { type: Image });
   }
 });
@@ -53,6 +51,7 @@ export const Product = objectType({
     t.nonNull.string('features');
     t.nonNull.list.field('includes', { type: Includes });
     t.nonNull.field('gallery', { type: Gallery });
+    t.nonNull.list.field('others', { type: Others });
     t.field('category', {
       type: 'Category',
       resolve(parent, _args, ctx) {
@@ -86,7 +85,7 @@ export const ProductQuery = extendType({
       args: {
         slug: nonNull(stringArg())
       },
-      async resolve(_parent, args, ctx) {
+      resolve(_parent, args, ctx) {
         const product = ctx.prisma.product.findUnique({
           where: {
             slug: args.slug

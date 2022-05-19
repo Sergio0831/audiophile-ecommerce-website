@@ -6,7 +6,7 @@ export const Category = objectType({
     t.nonNull.string('id');
     t.nonNull.string('name');
     t.nonNull.string('image');
-    t.nonNull.list.field('products', {
+    t.nonNull.list.nonNull.field('products', {
       type: 'Product',
       async resolve(parent, _args, ctx) {
         return await ctx.prisma.product.findMany({
@@ -22,7 +22,7 @@ export const Category = objectType({
 export const CategoriesQuery = extendType({
   type: 'Query',
   definition(t) {
-    t.nonNull.list.field('categories', {
+    t.nonNull.list.nonNull.field('categories', {
       type: 'Category',
       resolve(_parent, _args, ctx) {
         return ctx.prisma.category.findMany();
@@ -39,7 +39,7 @@ export const CategoryQuery = extendType({
       args: {
         name: nonNull(stringArg())
       },
-      async resolve(_parent, args, ctx) {
+      resolve(_parent, args, ctx) {
         const category = ctx.prisma.category.findUnique({
           where: { name: args.name }
         });

@@ -26,6 +26,13 @@ type Includes {
   quantity: Int
 }
 
+type Others {
+  categoryName: String
+  image: Image
+  name: String
+  slug: String
+}
+
 type Product {
   category: Category
   categoryImage: Image!
@@ -38,6 +45,7 @@ type Product {
   includes: [Includes]!
   name: String!
   new: Boolean!
+  others: [Others]!
   price: Int!
   slug: String!
 }

@@ -1,4 +1,4 @@
-import { ProductType } from '../../../types/product-types';
+import { TProduct } from '../../../types/product-types';
 import Button from '../../ui/Button';
 import Image from '../../ui/Image';
 import { useAppDispatch } from '../../../app/hooks';
@@ -10,7 +10,7 @@ import AmountButtons from '../../ui/AmountButtons';
 import { useState } from 'react';
 
 type ProductDetailsProsp = {
-  product: ProductType;
+  product: TProduct;
 };
 
 const ProductDetails = ({ product }: ProductDetailsProsp) => {
@@ -23,7 +23,7 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
     name,
     description,
     price,
-    category,
+    categoryName,
     slug
   } = product;
 
@@ -58,7 +58,7 @@ const ProductDetails = ({ product }: ProductDetailsProsp) => {
 
   return (
     <section className={`${classes.product} section-center`}>
-      <Button link={`/${category}`} className='backLink'>
+      <Button link={`/${categoryName}`} className='backLink'>
         go back
       </Button>
       <div className={classes.product__image}>

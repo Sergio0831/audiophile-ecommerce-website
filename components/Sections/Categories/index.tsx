@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import clsx from 'clsx';
 import { GET_CATEGORIES } from '../../../graphql/queries';
-import { CategoryTypes } from '../../../types/category-type';
+import { TCategory } from '../../../types/category-type';
 import Category from '../../ui/Category';
 import classes from './Categories.module.scss';
 
@@ -26,7 +26,7 @@ const Categories = ({ className }: CategoriesProps) => {
 
   return (
     <section className={categoriesClasses}>
-      {data.categories.map((cat: CategoryTypes) => (
+      {data.categories.map((cat: TCategory) => (
         <Category key={cat.name} category={cat} />
       ))}
     </section>

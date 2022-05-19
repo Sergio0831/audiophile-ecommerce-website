@@ -18,11 +18,11 @@ export type Gallery = {
 export type Others = {
   slug: string;
   name: string;
-  category: string;
+  categoryName: string;
   image: Image;
 };
 
-export type ProductType = {
+export type TProduct = {
   id: number;
   slug: string;
   name: string;
@@ -38,6 +38,6 @@ export type ProductType = {
   others: Others[];
 };
 
-export type Products = {
-  products: ProductType[];
+export type TProducts = {
+  products: TProduct[];
 };

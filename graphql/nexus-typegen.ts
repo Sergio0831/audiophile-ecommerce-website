@@ -47,6 +47,12 @@ export interface NexusGenObjects {
     item?: string | null; // String
     quantity?: number | null; // Int
   }
+  Others: { // root type
+    categoryName?: string | null; // String
+    image?: NexusGenRootTypes['Image'] | null; // Image
+    name?: string | null; // String
+    slug?: string | null; // String
+  }
   Product: { // root type
     categoryImage: NexusGenRootTypes['Image']; // Image!
     categoryName: string; // String!
@@ -58,6 +64,7 @@ export interface NexusGenObjects {
     includes: Array<NexusGenRootTypes['Includes'] | null>; // [Includes]!
     name: string; // String!
     new: boolean; // Boolean!
+    others: Array<NexusGenRootTypes['Others'] | null>; // [Others]!
     price: number; // Int!
     slug: string; // String!
   }
@@ -95,6 +102,12 @@ export interface NexusGenFieldTypes {
     item: string | null; // String
     quantity: number | null; // Int
   }
+  Others: { // field return type
+    categoryName: string | null; // String
+    image: NexusGenRootTypes['Image'] | null; // Image
+    name: string | null; // String
+    slug: string | null; // String
+  }
   Product: { // field return type
     category: NexusGenRootTypes['Category'] | null; // Category
     categoryImage: NexusGenRootTypes['Image']; // Image!
@@ -107,6 +120,7 @@ export interface NexusGenFieldTypes {
     includes: Array<NexusGenRootTypes['Includes'] | null>; // [Includes]!
     name: string; // String!
     new: boolean; // Boolean!
+    others: Array<NexusGenRootTypes['Others'] | null>; // [Others]!
     price: number; // Int!
     slug: string; // String!
   }
@@ -139,6 +153,12 @@ export interface NexusGenFieldTypeNames {
     item: 'String'
     quantity: 'Int'
   }
+  Others: { // field return type name
+    categoryName: 'String'
+    image: 'Image'
+    name: 'String'
+    slug: 'String'
+  }
   Product: { // field return type name
     category: 'Category'
     categoryImage: 'Image'
@@ -151,6 +171,7 @@ export interface NexusGenFieldTypeNames {
     includes: 'Includes'
     name: 'String'
     new: 'Boolean'
+    others: 'Others'
     price: 'Int'
     slug: 'String'
   }

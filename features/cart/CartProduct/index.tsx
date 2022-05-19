@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { useAppDispatch } from '../../../app/hooks';
 import AmountButtons from '../../../components/ui/AmountButtons';
 import { formatPrice } from '../../../helpers/formatPrice';
 import { shortName } from '../../../helpers/shortName';

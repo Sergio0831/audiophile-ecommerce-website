@@ -1,12 +1,12 @@
 import { useAppDispatch } from '../../../app/hooks';
 import { close } from '../../../features/mobileNav/mobileNavSlice';
-import { CategoryTypes } from '../../../types/category-type';
+import { TCategory } from '../../../types/category-type';
 import Button from '../Button';
 import Image from '../Image';
 import classes from './Category.module.scss';
 
 type CategoryProps = {
-  category: CategoryTypes;
+  category: TCategory;
 };
 
 const Category = ({ category }: CategoryProps) => {
