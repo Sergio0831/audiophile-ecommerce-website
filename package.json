@@ -9,7 +9,7 @@
     "lint": "next lint",
     "generate": "ts-node --transpile-only --compiler-options {\"module\":\"CommonJS\"} graphql/schema",
     "vercel-build": "prisma:generate && next build",
-    "prisma:generate": "PRISMA_CLIENT_ENGINE_TYPE=\"dataproxy\" prisma generate"
+    "prisma:generate": "prisma generate"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"commonjs\"} prisma/seed.ts"
