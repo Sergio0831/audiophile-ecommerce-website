@@ -1,3 +1,4 @@
+import { TCategories, TCategory } from './../types/category-type';
 export const products = [
   {
     slug: 'yx1-earphones',

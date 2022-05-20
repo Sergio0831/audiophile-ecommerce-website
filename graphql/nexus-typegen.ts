@@ -64,7 +64,7 @@ export interface NexusGenObjects {
     includes: Array<NexusGenRootTypes['Includes'] | null>; // [Includes]!
     name: string; // String!
     new: boolean; // Boolean!
-    others: Array<NexusGenRootTypes['Others'] | null>; // [Others]!
+    others?: Array<NexusGenRootTypes['Others'] | null> | null; // [Others]
     price: number; // Int!
     slug: string; // String!
   }
@@ -86,7 +86,7 @@ export interface NexusGenFieldTypes {
     id: string; // String!
     image: string; // String!
     name: string; // String!
-    products: Array<NexusGenRootTypes['Product'] | null>; // [Product]!
+    products: Array<NexusGenRootTypes['Product'] | null> | null; // [Product]
   }
   Gallery: { // field return type
     first: NexusGenRootTypes['Image'] | null; // Image
@@ -120,15 +120,15 @@ export interface NexusGenFieldTypes {
     includes: Array<NexusGenRootTypes['Includes'] | null>; // [Includes]!
     name: string; // String!
     new: boolean; // Boolean!
-    others: Array<NexusGenRootTypes['Others'] | null>; // [Others]!
+    others: Array<NexusGenRootTypes['Others'] | null> | null; // [Others]
     price: number; // Int!
     slug: string; // String!
   }
   Query: { // field return type
-    categories: Array<NexusGenRootTypes['Category'] | null>; // [Category]!
-    category: NexusGenRootTypes['Category']; // Category!
-    product: NexusGenRootTypes['Product']; // Product!
-    products: Array<NexusGenRootTypes['Product'] | null>; // [Product]!
+    categories: Array<NexusGenRootTypes['Category'] | null> | null; // [Category]
+    category: NexusGenRootTypes['Category'] | null; // Category
+    product: NexusGenRootTypes['Product'] | null; // Product
+    products: Array<NexusGenRootTypes['Product'] | null> | null; // [Product]
   }
 }
 

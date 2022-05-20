@@ -6,7 +6,7 @@ type Category {
   id: String!
   image: String!
   name: String!
-  products: [Product]!
+  products: [Product]
 }
 
 type Gallery {
@@ -45,14 +45,14 @@ type Product {
   includes: [Includes]!
   name: String!
   new: Boolean!
-  others: [Others]!
+  others: [Others]
   price: Int!
   slug: String!
 }
 
 type Query {
-  categories: [Category]!
-  category(name: String!): Category!
-  product(slug: String!): Product!
-  products: [Product]!
+  categories: [Category]
+  category(name: String!): Category
+  product(slug: String!): Product
+  products: [Product]
 }

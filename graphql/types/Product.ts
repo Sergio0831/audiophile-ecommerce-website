@@ -51,7 +51,7 @@ export const Product = objectType({
     t.nonNull.string('features');
     t.nonNull.list.field('includes', { type: Includes });
     t.nonNull.field('gallery', { type: Gallery });
-    t.nonNull.list.field('others', { type: Others });
+    t.list.field('others', { type: Others });
     t.field('category', {
       type: 'Category',
       resolve(parent, _args, ctx) {
@@ -68,7 +68,7 @@ export const Product = objectType({
 export const ProductsQuery = extendType({
   type: 'Query',
   definition(t) {
-    t.nonNull.list.field('products', {
+    t.list.field('products', {
       type: 'Product',
       resolve(_parent, _args, ctx) {
         return ctx.prisma.product.findMany();
@@ -80,7 +80,7 @@ export const ProductsQuery = extendType({
 export const ProductQuery = extendType({
   type: 'Query',
   definition(t) {
-    t.nonNull.field('product', {
+    t.field('product', {
       type: Product,
       args: {
         slug: nonNull(stringArg())

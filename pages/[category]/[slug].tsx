@@ -16,7 +16,6 @@ type ProductDetailsPageProps = {
 
 const ProductDetailsPage = ({ product }: ProductDetailsPageProps) => {
   const { features, includes, gallery, others } = product;
-  console.log(product);
 
   return (
     <>
