@@ -7,9 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "ts-node --transpile-only --compiler-options {\"module\":\"CommonJS\"} graphql/schema",
-    "vercel-build": "prisma:generate && next build",
-    "prisma:generate": "prisma generate"
+    "vercel-build": "prisma generate && npm run migrate:deploy && next build",
+    "migrate:deploy": "DATABASE_URL=\"$MIGRATE_DATABASE_URL\" prisma migrate deploy"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"commonjs\"} prisma/seed.ts"
