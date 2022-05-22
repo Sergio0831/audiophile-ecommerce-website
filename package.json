@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "prisma:generate && next build",
+    "vercel-build": "yarn prisma:generate && next build",
     "prisma:generate": "prisma generate"
   },
   "prisma": {
