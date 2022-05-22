@@ -6,12 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "vercel-build": "yarn prisma:generate && next build",
-    "prisma:generate": "prisma generate"
-  },
-  "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"commonjs\"} prisma/seed.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
