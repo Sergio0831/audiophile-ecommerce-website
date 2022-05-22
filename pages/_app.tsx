@@ -7,13 +7,14 @@ import { store } from '../app/store';
 
 function MyApp({ Component, pageProps }: any) {
   return (
-    <Provider store={store}>
-      <ApolloProvider client={apolloClient}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ApolloProvider>
-    </Provider>
+    // <Provider store={store}>
+    //   <ApolloProvider client={apolloClient}>
+    //     <Layout>
+
+    //     </Layout>
+    //   </ApolloProvider>
+    // </Provider>
+    <Component {...pageProps} />
   );
 }
 
