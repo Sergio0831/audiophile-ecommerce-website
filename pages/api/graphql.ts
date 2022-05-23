@@ -2,12 +2,14 @@ import { context } from './../../graphql/context';
 import { ApolloServer } from 'apollo-server-micro';
 import Cors from 'micro-cors';
 import { schema } from '../../graphql/schema';
+import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 
 const cors = Cors();
 const apolloServer = new ApolloServer({
   context,
   schema,
-  introspection: true
+  introspection: true,
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()]
 });
 
 const startServer = apolloServer.start();
