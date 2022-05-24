@@ -31,7 +31,7 @@ const Header = () => {
         <Button
           name='cart'
           className={classes.cart}
-          aria-label='Cart'
+          ariaLabel='Cart'
           onClick={() => dispatch(toggleCart())}
         >
           <Icon icon='cart' size='2.3rem' color='#fff' />

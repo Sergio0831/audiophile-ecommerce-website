@@ -16,7 +16,7 @@ const Logo = ({ className }: LogoProps) => {
   );
 
   return (
-    <Button name='logo' link='/' className={logoClasses} aria-label='Logo'>
+    <Button name='logo' link='/' className={logoClasses} ariaLabel='Logo'>
       <Icon icon='logo' size='100%' />
     </Button>
   );

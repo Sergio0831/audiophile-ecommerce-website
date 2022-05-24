@@ -30,6 +30,7 @@ const Navbar = ({ className }: NavBarProps) => {
                     ? `${classes.link__active} ${classes.link}`
                     : `${classes.link}`
                 }
+                aria-label={link.title}
               >
                 {link.title}
               </a>

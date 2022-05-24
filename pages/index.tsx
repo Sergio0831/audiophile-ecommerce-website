@@ -9,6 +9,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
+        <html lang='en' />
         <title>Audiophile e-commerce website</title>
         <meta
           name='description'

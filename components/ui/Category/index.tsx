@@ -28,7 +28,7 @@ const Category = ({ category }: CategoryProps) => {
         />
       </div>
       <div className={classes.category__text}>
-        <h6 className='heading-6'>{category.name}</h6>
+        <h4 className='heading-6'>{category.name}</h4>
         <span className='btn-default-3'>Shop</span>
       </div>
     </Button>

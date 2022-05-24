@@ -4,6 +4,7 @@ type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   activeClassName?: string;
+  ariaLabel?: string;
   link?: string;
   name?: string;
   form?: string;
@@ -17,13 +18,14 @@ const Button = ({
   link,
   children,
   onClick,
+  ariaLabel,
   name,
   form
 }: ButtonProps) => {
   if (link) {
     return (
       <Link href={link}>
-        <a className={className} onClick={onClick}>
+        <a className={className} onClick={onClick} aria-label={ariaLabel}>
           {children}
         </a>
       </Link>
@@ -37,6 +39,7 @@ const Button = ({
       className={className}
       onClick={onClick}
       form={form}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
