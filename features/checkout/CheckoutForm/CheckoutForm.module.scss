@@ -1,0 +1,17 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.form {
+  padding: $padding-base * 3 $padding-base * 2.4;
+  background-color: $clr-white;
+  border-radius: $radius-base;
+
+  @include tablet {
+    padding: $padding-base * 5.4 $padding-base * 4.8 $padding-base * 4.8;
+  }
+
+  h3 {
+    margin-bottom: $margin-base * 4;
+  }
+}

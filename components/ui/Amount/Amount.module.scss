@@ -1,0 +1,16 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.amount {
+  @include position($position: $p-absolute, $top: -50%, $right: -1rem);
+  @include flex($justify-content: $justify-center, $align-items: $align-center);
+
+  font-family: $font-base;
+  font-size: $fs-nano;
+  font-weight: $fw-bold;
+  width: 2rem;
+  height: 2rem;
+  background-color: $clr-primary;
+  color: $clr-white;
+  border-radius: $radius-round;
+}

@@ -1,0 +1,218 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.form {
+  display: $d-grid;
+  row-gap: $gap-base * 5;
+
+  fieldset {
+    display: $d-grid;
+    row-gap: $gap-base * 2.4;
+    border: none;
+    column-gap: $gap-base * 1.6;
+  }
+
+  legend {
+    margin-bottom: $margin-base * 1.6;
+    text-transform: uppercase;
+    color: $clr-primary;
+  }
+
+  &__group {
+    @include flex($flex-direction: column-reverse);
+
+    position: $p-relative;
+    row-gap: 9px;
+  }
+
+  &__label {
+    @include font(
+      $font-size: 1.2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.6rem
+    );
+
+    text-transform: capitalize;
+  }
+
+  &__input {
+    padding: $padding-base * 1.8 $padding-base * 2.4;
+    background-color: $clr-white;
+    border: 1px solid $clr-input-border;
+    border-radius: $radius-base;
+    caret-color: $clr-primary;
+    transition: border-color $transition;
+    outline: none;
+    cursor: pointer;
+
+    @include font(
+      $font-size: $fs-micro,
+      $font-weight: $fw-bold,
+      $line-height: 1.9rem
+    );
+
+    &::placeholder {
+      color: rgba($clr-black, 0.4);
+    }
+
+    &:focus,
+    &:active {
+      border-color: $clr-primary;
+    }
+
+    &:hover {
+      border-color: $clr-primary;
+    }
+  }
+
+  &__radio {
+    @include flex(
+      $flex-direction: row-reverse,
+      $align-items: $align-center,
+      $justify-content: $justify-end
+    );
+
+    padding: $padding-base * 1.8 0 $padding-base * 1.8 $padding-base * 1.6;
+    cursor: pointer;
+    border: 1px solid $clr-input-border;
+    border-radius: $radius-base;
+    transition: border-color $transition;
+    font-size: $fs-micro;
+
+    span {
+      @include flex(
+        $justify-content: $justify-center,
+        $align-items: $align-center
+      );
+
+      width: 2rem;
+      height: 2rem;
+      margin-right: $margin-base * 1.6;
+      border: 1px solid $clr-input-border;
+      border-radius: $radius-round;
+
+      &::after {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        border-radius: $radius-round;
+        background-color: $clr-primary;
+        opacity: 0;
+        transition: opacity $transition;
+      }
+    }
+
+    &:hover {
+      border-color: $clr-primary;
+    }
+  }
+
+  &__radioInput {
+    display: none;
+    &:checked + .form__radio span::after {
+      opacity: 1;
+    }
+    &:checked + .form__radio {
+      border-color: $clr-primary;
+    }
+  }
+
+  &__error {
+    @include position($position: $p-absolute, $top: 0, $right: 0);
+    @include font(
+      $font-size: 1.2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.6rem
+    );
+
+    text-transform: capitalize;
+    font-weight: $fw-medium;
+    color: $clr-error;
+  }
+
+  &__inputError {
+    border: 2px solid $clr-error !important;
+  }
+
+  &__labelError {
+    color: $clr-error;
+  }
+
+  &__billing {
+    grid-template-columns: 1fr;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__shipping {
+    grid-template-columns: 1fr;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form__group {
+      &:nth-child(2) {
+        @include mobile {
+          grid-column: 1 / 3;
+        }
+      }
+    }
+  }
+
+  &__payment {
+    grid-template-columns: 1fr;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    h6 {
+      @include font(
+        $font-size: 1.2rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.6rem
+      );
+    }
+
+    .form__group {
+      &:nth-child(2) {
+        @include mobile {
+          grid-column: 1 / 2;
+        }
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        @include mobile {
+          grid-column: 2 / 3;
+        }
+      }
+    }
+  }
+
+  .cash {
+    @include flex($flex-direction: column, $align-items: $align-center);
+
+    grid-column: 1 / -1;
+    column-gap: $gap-base * 3.2;
+    row-gap: $gap-base * 2.4;
+
+    @include mobile {
+      grid-column: span 2;
+      flex-direction: row;
+    }
+
+    &__icon {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+
+    p {
+      opacity: 0.5;
+    }
+  }
+}

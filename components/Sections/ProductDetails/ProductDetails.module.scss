@@ -1,0 +1,64 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.product {
+  display: $d-grid;
+  grid-template-columns: 1fr;
+  padding-top: $padding-base * 6.5;
+  padding-bottom: $padding-base * 6.5;
+  position: $p-relative;
+  row-gap: $gap-base * 4;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: $padding-base * 8.2;
+    padding-bottom: $padding-base * 8.2;
+  }
+
+  @include laptop {
+    padding-top: $padding-base * 16;
+    padding-bottom: $padding-base * 16;
+  }
+
+  &__new {
+    color: $clr-primary;
+    margin-bottom: $margin-base * 1.6;
+  }
+
+  &__content {
+    width: $width-base;
+
+    align-self: $align-center;
+    justify-self: $justify-start;
+
+    @include tablet {
+      max-width: 34rem;
+      justify-self: $justify-end;
+    }
+
+    @include laptop {
+      max-width: 44.5rem;
+    }
+
+    p {
+      margin: $margin-base * 2.5 0;
+      opacity: 0.5;
+
+      @include tablet {
+        margin: $margin-base * 3.2 0;
+      }
+    }
+  }
+
+  &__toCart {
+    margin-top: $margin-base * 3;
+
+    @include flex();
+    column-gap: $gap-base * 1.6;
+
+    @include tablet {
+      margin-top: $margin-base * 4.7;
+    }
+  }
+}

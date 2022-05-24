@@ -1,0 +1,71 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.hero {
+  height: 72.5vh;
+  background-image: url(../../../public//assets/home/mobile/image-hero-mobile.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: $p-relative;
+  border-radius: 5px;
+  margin-bottom: $margin-base * 9;
+
+  @include flex($align-items: $align-center);
+
+  @include mobile {
+    height: 100vh;
+    background-image: url(../../../public//assets/home/tablet/image-hero-tablet.webp);
+    margin-bottom: $margin-base * 15;
+  }
+
+  @include tablet {
+    margin-bottom: $margin-base * 20;
+  }
+
+  @include laptop {
+    height: 84vh;
+    background-image: url(../../../public//assets/home/desktop/image-hero.webp);
+  }
+
+  @include desktop {
+    height: 100vh;
+  }
+
+  &__container {
+    @include flex($justify-content: $justify-center);
+    text-align: $align-center;
+
+    @include laptop {
+      @include flex($justify-content: $justify-start);
+      text-align: inherit;
+    }
+  }
+
+  &__text {
+    width: 41rem;
+
+    span {
+      color: rgba($clr-white, 0.5);
+    }
+
+    h1 {
+      margin: $margin-base * 1.6 0 $margin-base * 2.4 0;
+      color: $clr-white;
+
+      @include mobile {
+        margin: $margin-base * 2.4 0;
+      }
+    }
+
+    p {
+      margin-bottom: $margin-base * 2.8;
+      color: rgba($clr-white, 0.75);
+
+      @include mobile {
+        margin-bottom: $margin-base * 4;
+      }
+    }
+  }
+}

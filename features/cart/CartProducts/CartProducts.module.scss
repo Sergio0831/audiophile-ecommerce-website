@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as *;
+
+.products {
+  display: $d-grid;
+  align-items: $align-center;
+  text-align: $align-center;
+  row-gap: $gap-base * 2.4;
+  padding: $padding-base * 3.2 0;
+
+  &__checkout {
+    padding: 0;
+    row-gap: $gap-base * 1.6;
+  }
+}

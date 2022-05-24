@@ -1,0 +1,53 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.header {
+  background-color: $clr-black;
+  color: $clr-white;
+  height: 9.6rem;
+  z-index: 5;
+
+  @include flex($align-items: $align-center, $justify-content: $justify-center);
+
+  &__container {
+    @include flex($align-items: $align-center);
+
+    padding-top: $padding-base * 3.6;
+    padding-bottom: $padding-base * 3.6;
+    border-bottom: 1px solid rgba($clr-white, 0.2);
+  }
+
+  &__logo {
+    @include flex($justify-content: $justify-center);
+    flex: 1 1 0%;
+
+    @include tablet {
+      justify-content: $justify-start;
+    }
+  }
+
+  &__nav {
+    flex: 3 1 0%;
+    justify-content: $justify-center;
+  }
+
+  &__home {
+    background-color: transparent;
+    @include position($position: $p-absolute, $right: 0, $left: 0);
+  }
+}
+
+.cart {
+  @include flex($align-items: $align-center, $justify-content: $justify-end);
+
+  flex: 0 0 0%;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+  @include tablet {
+    flex: 1 1 0%;
+  }
+}

@@ -1,0 +1,15 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.categories {
+  display: $d-grid;
+  grid-template-columns: 1fr;
+  column-gap: $gap-base * 3;
+  row-gap: $gap-base * 6.8;
+  justify-items: $justify-center;
+
+  @include mobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

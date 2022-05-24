@@ -1,0 +1,24 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.overlay {
+  @include position($position: $p-absolute, $top: 9.6rem, $left: 0, $right: 0);
+
+  @include wh();
+
+  z-index: 5;
+  background-color: rgba($clr-black, 0.4);
+  opacity: 1;
+  transition: opacity $transition, visibility $transition;
+
+  &__nav {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__checkout {
+    top: 0;
+  }
+}

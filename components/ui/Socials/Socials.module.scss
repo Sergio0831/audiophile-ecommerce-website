@@ -1,0 +1,17 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.socials {
+  @include flex();
+
+  column-gap: $gap-base * 1.6;
+
+  svg {
+    transition: color $transition;
+
+    &:hover {
+      color: $clr-primary;
+    }
+  }
+}
