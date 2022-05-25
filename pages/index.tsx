@@ -9,13 +9,11 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <html lang='en' />
         <title>Audiophile e-commerce website</title>
         <meta
           name='description'
           content='Audiophile is an all in one stop to fulfill your audio needs.'
         />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Hero />
       <Categories />

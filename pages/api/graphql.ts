@@ -3,6 +3,7 @@ import { ApolloServer } from 'apollo-server-micro';
 import Cors from 'micro-cors';
 import { schema } from '../../graphql/schema';
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
+import { PageConfig } from 'next';
 
 const cors = Cors();
 const apolloServer = new ApolloServer({
@@ -26,7 +27,7 @@ export default cors(async function handler(req, res) {
   })(req, res);
 });
 
-export const config = {
+export const config: PageConfig = {
   api: {
     bodyParser: false
   }

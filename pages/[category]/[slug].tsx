@@ -7,7 +7,7 @@ import ProductDetails from '../../components/Sections/ProductDetails';
 import ProductDetailsFeatures from '../../components/Sections/ProductDetailsFeatures';
 import ProductDetailsGallery from '../../components/Sections/ProductDetailsGallery';
 import ProductDetailsOthers from '../../components/Sections/ProductDetailsOthers';
-import { GET_PRODUCT, GET_PRODUCTS } from '../../graphql/queries';
+import prisma from '../../prisma/prisma';
 import { TProduct } from '../../types/product-types';
 
 type ProductDetailsPageProps = {
@@ -35,28 +35,23 @@ const ProductDetailsPage = ({ product }: ProductDetailsPageProps) => {
 
 export default ProductDetailsPage;
 
-export const getStaticProps: GetStaticProps = async ({
-  params: { slug }
-}: any) => {
-  const { data } = await apolloClient.query({
-    query: GET_PRODUCT,
-    variables: { slug }
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+  const product = await prisma.product.findUnique({
+    where: { slug: params.slug }
   });
 
   return {
     props: {
-      product: data?.product
+      product
     }
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await apolloClient.query({
-    query: GET_PRODUCTS
-  });
+  const products = await prisma.product.findMany();
 
   return {
-    paths: data?.products.map((product: TProduct) => {
+    paths: products.map((product) => {
       return {
         params: { category: product.categoryName, slug: product.slug }
       };

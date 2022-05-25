@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     deviceSizes: [560, 768]
   }
-  // typescript: {
-  //   ignoreBuildErrors: true
-  // }
 };
 
 module.exports = nextConfig;

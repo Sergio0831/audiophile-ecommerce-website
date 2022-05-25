@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache, HttpLink, from } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
 
 const httpLink = new HttpLink({
-  uri: 'https://audiophile-ivcenko.vercel.app/api/graphql'
+  uri: '/api/graphql'
 });
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
