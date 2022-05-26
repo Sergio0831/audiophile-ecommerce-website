@@ -1,56 +1,11 @@
-@use '../../../styles/variables' as *;
-@use '../../../styles/mixins' as *;
 @use '../../../styles/breakpoints' as *;
 
 .menu {
   &__btn {
     display: block;
-    width: 1.6rem;
-    height: 1.5rem;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-
-    span {
-      position: $p-relative;
-      top: 0;
-      height: 3px;
-      background-color: $clr-white;
-      margin-bottom: 3px;
-      transition: $transition transform, $transition transform-origin;
-
-      &:first-child {
-        transform-origin: top left;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-        transform-origin: bottom left;
-      }
-
-      &:nth-child(2) {
-        right: 0;
-      }
-    }
 
     @include tablet {
       display: none;
-    }
-  }
-
-  &__open {
-    span:first-child {
-      transform: rotate(45deg) translate(2px, -1px);
-      transform-origin: top left;
-    }
-
-    span:last-child {
-      transform: rotate(-45deg) translate(2px, 1px);
-      transform-origin: bottom left;
-    }
-
-    span:nth-child(2) {
-      opacity: 0;
     }
   }
 }

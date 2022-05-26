@@ -1,30 +1,25 @@
 import classes from './MenuBtn.module.scss';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { toggle } from '../../../features/mobileNav/mobileNavSlice';
-import Button from '../Button';
 import clsx from 'clsx';
+import { Turn as Hamburger } from 'hamburger-react';
 
 const MenuBtn = () => {
   const dispatch = useAppDispatch();
   const open = useAppSelector((state) => state.mobileNav.open);
 
-  const btnClasses = clsx({
-    [classes.menu__btn]: true,
-    [classes.menu__open]: open
-  });
-
   return (
-    <>
-      <Button
-        className={btnClasses}
-        onClick={() => dispatch(toggle())}
-        ariaLabel='Menu'
-      >
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-      </Button>
-    </>
+    <div className={classes.menu__btn}>
+      <Hamburger
+        toggled={open}
+        toggle={() => dispatch(toggle())}
+        size={20}
+        label='Show menu'
+        hideOutline={false}
+        distance='lg'
+        duration={0.2}
+      />
+    </div>
   );
 };
 
