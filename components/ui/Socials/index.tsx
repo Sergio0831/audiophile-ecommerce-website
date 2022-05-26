@@ -23,6 +23,7 @@ const Socials = ({ className }: SocialsProps) => {
             href={`https://${social.icon}.com`}
             rel='noopener noreferrer'
             target='_blank'
+            aria-label={social.icon}
           >
             <Icon icon={social.icon} size={social.size} color={social.color} />
           </a>

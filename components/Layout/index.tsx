@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import Cart from '../../features/cart/Cart';
 import { cartTotal } from '../../features/cart/cartSlice';
+import Cart from '../../features/cart/Cart';
 import Footer from './Footer';
 import Header from './Header';
 import MobileNav from './MobileNav';

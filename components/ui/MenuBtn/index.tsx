@@ -15,7 +15,11 @@ const MenuBtn = () => {
 
   return (
     <>
-      <Button className={btnClasses} onClick={() => dispatch(toggle())}>
+      <Button
+        className={btnClasses}
+        onClick={() => dispatch(toggle())}
+        ariaLabel='Menu'
+      >
         <span></span>
         <span></span>
         <span></span>
