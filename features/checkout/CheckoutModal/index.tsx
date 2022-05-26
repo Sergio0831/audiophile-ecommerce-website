@@ -44,7 +44,7 @@ const CheckoutModal = () => {
                 viewLess={viewLess}
                 cartTotal={cart.cartTotalAmount}
               />
-              {cart.cartTotalQuantity > 1 && (
+              {cart.cartItems.length > 1 && (
                 <div className={classes.modal__btn}>
                   <Button
                     className='opacity-text'

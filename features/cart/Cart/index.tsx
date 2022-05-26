@@ -1,10 +1,8 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import { useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import Overlay from '../../../components/Layout/Overlay';
 import Button from '../../../components/ui/Button';
-import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
 import CartProducts from '../CartProducts';
 import { clearCart, closeCart } from '../cartSlice';
 import CartTotal from '../CartTotal';
@@ -15,24 +13,24 @@ const Cart = () => {
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const cartRef = useRef<HTMLDivElement>(null);
+  // const cartRef = useRef<HTMLDivElement>(null);
 
   const cartClasses = clsx({
     [classes.cart]: true,
     [classes.cart__home]: router.pathname === '/'
   });
 
-  const closeOutsideClick = () => {
-    dispatch(closeCart());
-  };
+  // const closeOutsideClick = () => {
+  //   dispatch(closeCart());
+  // };
 
-  useOnClickOutside(cartRef, closeOutsideClick);
+  // useOnClickOutside(cartRef, closeOutsideClick);
 
   return (
     <>
       {cartOpen && <Overlay />}
       <section className={`${classes.wrapper} section-center`}>
-        <div className={cartClasses} ref={cartRef}>
+        <div className={cartClasses}>
           <div className={classes.cart__qty}>
             <h6 className='heading-6'>cart ({cart.cartTotalQuantity})</h6>
             {cart.cartItems.length > 0 && (

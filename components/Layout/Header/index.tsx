@@ -9,6 +9,7 @@ import Navbar from '../Navbar';
 import classes from './Header.module.scss';
 import { toggleCart } from '../../../features/cart/cartSlice';
 import Amount from '../../ui/Amount';
+import { close } from '../../../features/mobileNav/mobileNavSlice';
 
 const Header = () => {
   const router = useRouter();
@@ -32,7 +33,11 @@ const Header = () => {
           name='cart'
           className={classes.cart}
           ariaLabel='Cart'
-          onClick={() => dispatch(toggleCart())}
+          onClick={(e) => {
+            dispatch(toggleCart());
+            dispatch(close());
+            e.stopPropagation();
+          }}
         >
           <Icon icon='cart' size='2.3rem' color='#fff' />
           {cartTotalQuantity > 0 && <Amount items={cartTotalQuantity} />}

@@ -4,8 +4,6 @@ import classes from './MobileNav.module.scss';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import Overlay from '../Overlay';
 import { useRef } from 'react';
-import { close } from '../../../features/mobileNav/mobileNavSlice';
-import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 
 const MobileNav = () => {
@@ -19,12 +17,12 @@ const MobileNav = () => {
     [classes.nav__visible]: openNav
   });
 
-  useOnClickOutside(navRef, () => dispatch(close()));
+  // useOnClickOutside(navRef, () => dispatch(close()));
 
   return (
     <>
       {openNav && <Overlay navOverlay />}
-      <nav ref={navRef} className={mobileNavClasses}>
+      <nav className={mobileNavClasses}>
         <Categories />
       </nav>
     </>

@@ -9,7 +9,8 @@
   background-repeat: no-repeat;
   background-position: center;
   position: $p-relative;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   margin-bottom: $margin-base * 9;
 
   @include flex($align-items: $align-center);
