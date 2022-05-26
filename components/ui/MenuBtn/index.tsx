@@ -20,9 +20,9 @@ const MenuBtn = () => {
         onClick={() => dispatch(toggle())}
         ariaLabel='Menu'
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
       </Button>
     </>
   );
