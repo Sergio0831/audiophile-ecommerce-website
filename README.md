@@ -10,7 +10,7 @@ Frontend Mentor challenges help me improve my coding skills by building realisti
 
 ### Links
 
-- Solution URL: Coming Soon!
+- Solution URL: [SOLUTION!!!](https://www.frontendmentor.io/solutions/nextjs-graphql-nexus-prisma-mongodb-typescript-fullstack-app-MuwwO803pv)!
 - Live Site URL: [LIVE!!!](https://audiophile-ivcenko.vercel.app/)
 
 ## My process
@@ -30,5 +30,5 @@ Frontend Mentor challenges help me improve my coding skills by building realisti
 
 ## Author
 
-- Website - [Sergejs Ivcenko](https://www.ivcenko.name/)
+- Website - [Sergejs Ivcenko](https://www.ivcenko.ie)
 - Frontend Mentor - [@Sergio0831](https://www.frontendmentor.io/profile/Sergio0831)
