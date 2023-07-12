@@ -3,75 +3,75 @@
 @use '../../../styles/breakpoints' as *;
 
 .section {
-  @include flex($flex-direction: column, $justify-content: $justify-between);
-  column-gap: $gap-base;
-  row-gap: $gap-base * 6.5;
+	@include flex($flex-direction: column, $justify-content: $justify-between);
+	column-gap: $gap-base;
+	row-gap: $gap-base * 6.5;
 
-  @include mobile {
-    row-gap: $gap-base * 12;
-  }
+	@include mobile {
+		row-gap: $gap-base * 12;
+	}
 
-  @include tablet {
-    flex-direction: row;
-  }
+	@include tablet {
+		flex-direction: row;
+	}
 
-  &__features {
-    width: $width-base;
+	&__features {
+		width: $width-base;
 
-    @include tablet {
-      max-width: 63.5rem;
-    }
-  }
+		@include tablet {
+			max-width: 63.5rem;
+		}
+	}
 
-  p {
-    opacity: 0.5;
-  }
+	p {
+		opacity: 0.5;
+	}
 
-  &__includes {
-    width: $width-base;
-    max-width: 55rem;
+	&__includes {
+		width: $width-base;
+		max-width: 55rem;
 
-    @include flex(
-      $flex-direction: column,
-      $align-items: $align-start,
-      $justify-content: $justify-between
-    );
+		@include flex(
+			$flex-direction: column,
+			$align-items: $align-start,
+			$justify-content: $justify-between
+		);
 
-    @include mobile {
-      flex-direction: row;
-    }
+		@include mobile {
+			flex-direction: row;
+		}
 
-    @include tablet {
-      flex-direction: column;
-      align-items: center;
-      justify-content: $justify-start;
-      max-width: 35rem;
-    }
+		@include tablet {
+			flex-direction: column;
+			align-items: center;
+			justify-content: $justify-start;
+			max-width: 35rem;
+		}
 
-    @include large-laptop {
-      align-items: flex-start;
-    }
+		@include large-laptop {
+			align-items: flex-start;
+		}
 
-    li {
-      @include flex();
-      column-gap: $gap-base * 2.4;
+		li {
+			@include flex();
+			column-gap: $gap-base * 2.4;
 
-      span {
-        font-weight: $fw-bold;
-        color: $clr-primary;
-      }
+			span {
+				font-weight: $fw-bold;
+				color: $clr-primary;
+			}
 
-      &:not(:last-child) {
-        margin-bottom: 8px;
-      }
-    }
-  }
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+	}
 
-  h3 {
-    margin-bottom: $margin-base * 2.4;
+	h2 {
+		margin-bottom: $margin-base * 2.4;
 
-    @include mobile {
-      margin-bottom: $margin-base * 3.2;
-    }
-  }
+		@include mobile {
+			margin-bottom: $margin-base * 3.2;
+		}
+	}
 }

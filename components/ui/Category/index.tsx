@@ -6,33 +6,33 @@ import Image from '../Image';
 import classes from './Category.module.scss';
 
 type CategoryProps = {
-  category: TCategory;
+	category: TCategory;
 };
 
 const Category = ({ category }: CategoryProps) => {
-  const dispatch = useAppDispatch();
+	const dispatch = useAppDispatch();
 
-  return (
-    <Button
-      link={`/${category.name}`}
-      className={classes.category}
-      onClick={() => dispatch(close())}
-    >
-      <div className={classes.category__image}>
-        <Image
-          desktopWebp={`/assets/shared/desktop/${category.name}.webp`}
-          tabletWebp={`/assets/shared/tablet/${category.name}.webp`}
-          mobileWebp={`/assets/shared/mobile/${category.name}.webp`}
-          imageClasses=''
-          alt={category.name}
-        />
-      </div>
-      <div className={classes.category__text}>
-        <h3 className='heading-6'>{category.name}</h3>
-        <span className='btn-default-3'>Shop</span>
-      </div>
-    </Button>
-  );
+	return (
+		<Button
+			link={`/${category.name}`}
+			className={classes.category}
+			onClick={() => dispatch(close())}
+		>
+			<div className={classes.category__image}>
+				<Image
+					desktopWebp={`/assets/shared/desktop/${category.name}.webp`}
+					tabletWebp={`/assets/shared/tablet/${category.name}.webp`}
+					mobileWebp={`/assets/shared/mobile/${category.name}.webp`}
+					imageClasses=''
+					alt={category.name}
+				/>
+			</div>
+			<div className={classes.category__text}>
+				<h2 className='heading-6'>{category.name}</h2>
+				<span className='btn-default-3'>Shop</span>
+			</div>
+		</Button>
+	);
 };
 
 export default Category;

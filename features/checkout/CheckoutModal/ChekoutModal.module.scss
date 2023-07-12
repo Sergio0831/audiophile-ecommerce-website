@@ -3,102 +3,102 @@
 @use '../../../styles/breakpoints' as *;
 
 .modal {
-  @include position($position: $p-fixed, $left: 50%, $top: 50%);
+	@include position($position: $p-fixed, $left: 50%, $top: 50%);
 
-  width: 32rem;
-  transform: translate(-50%, -50%);
-  background-color: $clr-white;
-  z-index: 10;
-  border-radius: $radius-base;
-  padding: $padding-base * 3.2;
+	width: 32rem;
+	transform: translate(-50%, -50%);
+	background-color: $clr-white;
+	z-index: 10;
+	border-radius: $radius-base;
+	padding: $padding-base * 3.2;
 
-  @include mobile {
-    width: 54rem;
-    padding: $padding-base * 4.8;
-  }
+	@include mobile {
+		width: 54rem;
+		padding: $padding-base * 4.8;
+	}
 
-  h3 {
-    margin-top: $margin-base * 2.3;
-    margin-bottom: $margin-base * 1.6;
+	h2 {
+		margin-top: $margin-base * 2.3;
+		margin-bottom: $margin-base * 1.6;
 
-    @include mobile {
-      margin-top: $margin-base * 3.3;
-      margin-bottom: $margin-base * 2.4;
-    }
-  }
+		@include mobile {
+			margin-top: $margin-base * 3.3;
+			margin-bottom: $margin-base * 2.4;
+		}
+	}
 
-  &__products {
-    display: $d-grid;
-    grid-template-columns: 1fr;
-    margin: $margin-base * 2.4 0;
-    border-radius: $radius-base;
-    overflow: hidden;
+	&__products {
+		display: $d-grid;
+		grid-template-columns: 1fr;
+		margin: $margin-base * 2.4 0;
+		border-radius: $radius-base;
+		overflow: hidden;
 
-    @include mobile {
-      grid-template-columns: 2fr 1.5fr;
-      margin-top: $margin-base * 3.3;
-      margin-bottom: $margin-base * 4.8;
-    }
+		@include mobile {
+			grid-template-columns: 2fr 1.5fr;
+			margin-top: $margin-base * 3.3;
+			margin-bottom: $margin-base * 4.8;
+		}
 
-    &Left {
-      padding: $padding-base * 2.4 $padding-base * 2.4 $padding-base * 1.8;
-      background-color: $clr-light;
-    }
+		&Left {
+			padding: $padding-base * 2.4 $padding-base * 2.4 $padding-base * 1.8;
+			background-color: $clr-light;
+		}
 
-    &Right {
-      @include flex($align-items: $align-end);
-      row-gap: 8px;
-      padding-top: $padding-base * 1.5;
-      padding-left: $padding-base * 2.4;
-      padding-bottom: $padding-base * 2;
-      background-color: $clr-black;
-      color: $clr-white;
+		&Right {
+			@include flex($align-items: $align-end);
+			row-gap: 8px;
+			padding-top: $padding-base * 1.5;
+			padding-left: $padding-base * 2.4;
+			padding-bottom: $padding-base * 2;
+			background-color: $clr-black;
+			color: $clr-white;
 
-      &Center {
-        align-items: $align-center;
+			&Center {
+				align-items: $align-center;
 
-        @include mobile {
-          padding-top: 0;
-          padding-bottom: 0 !important;
-          padding-left: $padding-base * 3.2;
-        }
-      }
+				@include mobile {
+					padding-top: 0;
+					padding-bottom: 0 !important;
+					padding-left: $padding-base * 3.2;
+				}
+			}
 
-      @include mobile {
-        padding-left: $padding-base * 3.2;
-        padding-bottom: $padding-base * 4;
-      }
-    }
-  }
+			@include mobile {
+				padding-left: $padding-base * 3.2;
+				padding-bottom: $padding-base * 4;
+			}
+		}
+	}
 
-  &__btn {
-    margin-top: $margin-base;
-    padding-top: $padding-base * 1.2;
-    text-align: $align-center;
-    border-top: 1px solid rgba($clr-black, 0.08);
+	&__btn {
+		margin-top: $margin-base;
+		padding-top: $padding-base * 1.2;
+		text-align: $align-center;
+		border-top: 1px solid rgba($clr-black, 0.08);
 
-    button {
-      cursor: pointer;
-      border: none;
+		button {
+			cursor: pointer;
+			border: none;
 
-      @include font(
-        $font-size: 1.2rem,
-        $font-weight: $fw-bold,
-        $line-height: 1.6rem
-      );
+			@include font(
+				$font-size: 1.2rem,
+				$font-weight: $fw-bold,
+				$line-height: 1.6rem
+			);
 
-      letter-spacing: -0.214286px;
-    }
-  }
+			letter-spacing: -0.214286px;
+		}
+	}
 
-  &__total {
-    p {
-      text-transform: uppercase;
-      opacity: 0.5;
-    }
-  }
+	&__total {
+		p {
+			text-transform: uppercase;
+			opacity: 0.5;
+		}
+	}
 
-  a {
-    width: $width-base;
-  }
+	a {
+		width: $width-base;
+	}
 }

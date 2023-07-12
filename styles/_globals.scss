@@ -3,85 +3,89 @@
 @use './breakpoints' as *;
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
-  font-family: $font-base;
-  color: $clr-black;
-  position: $p-relative;
-  background-color: $clr-lighter;
+	font-family: $font-base;
+	color: $clr-black;
+	position: $p-relative;
+	background-color: $clr-lighter;
 
-  @include font(
-    $font-size: $fs-base,
-    $font-weight: $fw-medium,
-    $line-height: 2.5rem
-  );
+	@include font(
+		$font-size: $fs-base,
+		$font-weight: $fw-medium,
+		$line-height: 2.5rem
+	);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-  display: inline-block;
+	color: inherit;
+	text-decoration: none;
+	display: inline-block;
 }
 
 .img {
-  border-radius: 8px;
-  width: $width-base;
-  object-fit: cover;
+	border-radius: 8px;
+}
+
+img {
+	width: $width-base;
+	height: auto;
+	object-fit: cover;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 span {
-  display: $d-block;
+	display: $d-block;
 }
 
 .section-center {
-  width: $width-base;
-  max-width: 110rem;
-  margin: 0 auto;
-  padding-left: $padding-base * 2.4;
-  padding-right: $padding-base * 2.4;
+	width: $width-base;
+	max-width: 110rem;
+	margin: 0 auto;
+	padding-left: $padding-base * 2.4;
+	padding-right: $padding-base * 2.4;
 
-  @include large-laptop {
-    padding-left: 0;
-    padding-right: 0;
-  }
+	@include large-laptop {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .backLink {
-  text-transform: capitalize;
-  opacity: 0.5;
-  transition: color $transition;
+	text-transform: capitalize;
+	opacity: 0.5;
+	transition: color $transition;
 
-  @include position($position: $p-absolute, $top: 1.6rem, $left: 2.4rem);
+	@include position($position: $p-absolute, $top: 1.6rem, $left: 2.4rem);
 
-  @include tablet {
-    top: 3rem;
-  }
+	@include tablet {
+		top: 3rem;
+	}
 
-  @include large-laptop {
-    left: auto;
-  }
+	@include large-laptop {
+		left: auto;
+	}
 
-  &:hover {
-    color: $clr-primary;
-  }
+	&:hover {
+		color: $clr-primary;
+	}
 }
 
 ::-moz-selection {
-  background: $clr-primary;
+	background: $clr-primary;
 }
 
 ::selection {
-  background: $clr-primary;
+	background: $clr-primary;
 }

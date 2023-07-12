@@ -3,49 +3,49 @@
 @use '../../../styles/breakpoints' as *;
 
 .others {
-  padding-bottom: $padding-base * 17;
+	padding-bottom: $padding-base * 17;
 
-  @include tablet {
-    padding-bottom: $padding-base * 24;
-  }
+	@include tablet {
+		padding-bottom: $padding-base * 24;
+	}
 
-  h3 {
-    margin-bottom: $margin-base * 4;
-    text-align: $align-center;
+	h2 {
+		margin-bottom: $margin-base * 4;
+		text-align: $align-center;
 
-    @include mobile {
-      margin-bottom: $margin-base * 5.6;
-    }
+		@include mobile {
+			margin-bottom: $margin-base * 5.6;
+		}
 
-    @include tablet {
-      margin-bottom: $margin-base * 6.4;
-    }
-  }
+		@include tablet {
+			margin-bottom: $margin-base * 6.4;
+		}
+	}
 
-  &__items {
-    display: $d-grid;
-    grid-template-columns: 1fr;
-    column-gap: $gap-base * 1;
-    row-gap: $gap-base * 5.6;
+	&__items {
+		display: $d-grid;
+		grid-template-columns: 1fr;
+		column-gap: $gap-base * 1;
+		row-gap: $gap-base * 5.6;
 
-    @include mobile {
-      grid-template-columns: repeat(3, 1fr);
-    }
+		@include mobile {
+			grid-template-columns: repeat(3, 1fr);
+		}
 
-    @include tablet {
-      column-gap: $gap-base * 3;
-    }
-  }
+		@include tablet {
+			column-gap: $gap-base * 3;
+		}
+	}
 
-  &__item {
-    text-align: $align-center;
+	&__item {
+		text-align: $align-center;
 
-    h5 {
-      margin: $margin-base * 3.2 0;
+		h3 {
+			margin: $margin-base * 3.2 0;
 
-      @include mobile {
-        margin: $margin-base * 4 0 $margin-base * 3.2;
-      }
-    }
-  }
+			@include mobile {
+				margin: $margin-base * 4 0 $margin-base * 3.2;
+			}
+		}
+	}
 }
